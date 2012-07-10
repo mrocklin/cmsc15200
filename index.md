@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* This webpage is under construction. Much of the information here is from
+2011.
 
 Course Staff
 ------------
