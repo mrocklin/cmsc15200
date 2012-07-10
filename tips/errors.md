@@ -15,8 +15,8 @@ You will write code with errors. This is inevitable. Rather than trying to avoid
 
 Do you see anything wrong? `gcc` does. When I try to compile this program gcc prints out the following
 
-    helloworld.c: In function 'main':<br>
-    helloworld.c:5:1: error: expected ';' before '}' token<br>
+    helloworld.c: In function 'main':
+    helloworld.c:5:1: error: expected ';' before '}' token
 
 These sorts of messages are the best that <code>gcc</code> can do. For a computer, it's not a bad attempt at communicating in English. It's saying that in the helloworld.c program on line 5 character 1 (<code>helloworld.c:5:1</code>) it expected a '<code>;</code>' before the '<code>}</code>' it just found.
 

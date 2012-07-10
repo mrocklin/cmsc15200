@@ -17,7 +17,6 @@ default and is accessible through the Terminal. If you have a Windows machine
 you can install
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use ssh from a terminal as follows
 
-
     ssh username@computername
 
 For example if I were to log in remotely to the server
