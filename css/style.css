@@ -1,0 +1,36 @@
+body, html {
+    padding : 0px;
+    margin : 0px;
+    height : 100%;
+} 
+
+#wrapper {
+    width:900px;
+    height:100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    height:5%;
+    background-color:#FFF;
+    width:900px;
+}
+#navbar {
+    background-color:#FFF;
+    width:200px;
+    height:90%;
+    float:left;
+}
+ul {
+    padding:5;
+    list-style:none;
+}
+
+#content {
+    height:90%;
+    background-color:#FFF;
+    width:700px;
+    float:left;
+}
+

@@ -1,0 +1,41 @@
+<html>
+  <head>
+	<title>CMSC 152 Summer 2011</title>
+	<meta name="generator" content="BBEdit 6.5.3">
+    <meta name="google-site-verification" content="kiHXwB1qYeATO6GmyV9Q6T8E9cA1-VJKmJ2CPY2sIF8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18218894-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+     </script>
+     <link rel="stylesheet" type="text/css" href="/css/style.css"
+           media="screen"/>
+
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">    
+      {% include title.html %} 
+    </div>
+
+    <!-- Navigation Bar -->
+    <div id="navbar">    
+      {% include navbar.html %} 
+    </div>
+
+    <!-- Content -->
+    {{ content }}
+    
+    <!-- Footer -->
+    {% include footer.html %}
+  </body>
+</html>
+
