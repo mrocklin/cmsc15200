@@ -3,5 +3,5 @@ layout: default
 title: Assignments 
 ---
 
- * [HW-0:](hw0/index.html)
+ * [HW0 : Hello World](hw0/index.html)
 
