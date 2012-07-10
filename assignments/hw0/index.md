@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Hello World 
-due: Tuesday July 26th, 8pm
+due: Tuesday July 24th, 8pm
 ---
 
 Introduction
@@ -11,7 +11,7 @@ Introduction
 Hello World
 -----------
 
-Download the file [helloworld.c](helloworld.c), copy it to desktop *(see *A Few
+Download the file [helloworld.c](helloworld.c), copy it to desktop (see *A Few
 Linux Commands* below) and open it up with a text editor. If you double click on it the default text editor, Bluefish, will open. 
 
 This is the most basic C program. It prints "Hello World!" to the screen. Our first step will be to compile this .c file into an executable or binary file. 
@@ -19,14 +19,16 @@ This is the most basic C program. It prints "Hello World!" to the screen. Our fi
 A Few Linux Commands 
 --------------------
 
-Open a terminal by going to *Applications:Accessories:Terminal*. You may want to right click on the Terminal option and select "Add this launcher to Panel" to make this useful program accessible on the top panel of the screen. We'll use it quite a bit. 
-
-type
+Open a terminal by going to **Applications:Accessories:Terminal**. You may want
+to right click on the Terminal option and select "Add this launcher to Panel"
+to make this useful program accessible on the top panel of the screen. We'll
+use it quite a bit. Now type
 
     pwd
 
 to print your working directory (where you are). You should get something like
-`/home/your_username`. This is your home directory. 
+`/home/your_username`. This is your home directory; all of your files will
+live here. 
 
 You can list the files and directories in this directory by typing 
     
@@ -72,3 +74,83 @@ this happens to you check out [this explanation](/tips/errors.html) on compile t
 errors.
 
 For this task you will submit both the code and the executable. This is the only time when we will ask for the executable. In the future we will only want your code. 
+
+Rectangles 
+----------
+
+Download the file [rect.c](rect.c) and move it to the Desktop. If you need to move your working directory from <code>/home/username/Desktop</code> directory down a level to <code>/home/username/</code> you can type 
+
+    cd ..
+
+After moving rect.c compile it using <code>gcc </code> like you did in the last section and run the executable (be sure not to save over your executable from last section).
+
+Hopefully you see something like:
+
+    Area of Rectangle with sides 3, 4 is 12
+
+This simple program computes the area of a rectangle given the two side lengths. The area is computed by multiplying the width by the height. 
+
+Inspect this program with the text editor. The <code>printf</code> line may look somewhat cryptic but everything else should be familiar. Your task is to change this program to compute the perimeter of a rectangle given its length and width rather than the area.  
+
+Compile your code and test it. Make sure that the results make sense. 
+
+Submit your modified rect.c code
+
+Fahrenheit to Celsius
+---------------------
+
+Page 12 in the Kernighan and Ritchie Text gives an example program that
+produces a table matching temperatures in Fahrenheit to temperatures in
+Celsius. Download this Fahrenheit-to-Celcius code [ftoc.c](ftoc.c) to your Desktop. Compile and run the executable, look at the results, and then look at the code.
+
+This program is more complex than the previous two. It has similar elements like integer variables, <code>printf</code>, and mathematical expressions but it also contains some new elements like <code>while</code>. Additionally K and R's style is different. For example they declare variables
+
+    int fahr, celsius;
+    int lower, upper, step;
+
+and assign values to them
+
+    lower = 0;      /* lower limit of temperature scale */
+    upper = 300;    /* upper limit */
+    step = 10;      /* step size */
+    fahr = lower;
+
+in two different steps. If you can understand this program perfectly then that's great, but it's not necessary for today's assignment. 
+
+Task one
+--------
+
+Decrease the stepsize to increase the number of rows in the table. Set the step variable to 5 and see the effect this has on the output of the program. Do this again, setting the step size to 1. 
+
+Submit your <code>ftoc.c</code> code with step size equal to one. 
+
+Task two
+--------
+
+This program converts degrees Fahrenheit (F) to degrees Celsius (C) by the following formula 
+
+    C = 5 * (F-32) / 9
+
+A similar conversion is to change miles per hour (mph) to kilometers per hour (kph)
+
+    kph = 1.6 * mph
+
+Copy the <code>ftoc.c</code> program to a new file, <code>mtok.c</code> by typing 
+
+    cp ftoc.c mtok.c
+
+in the terminal. Edit this program so that it displays a table converting miles per hour to kilometers per hour, starting from 0 up to 100 miles per hour in steps of 10.  Your output should look something like this:
+
+    0    0
+    10   16
+    20   32
+    30   48
+    40   64
+    50   80
+    60   96
+    70   112
+    80   128
+    90   144
+    100  160
+
+Submit your <code>mtok.c</code> file
