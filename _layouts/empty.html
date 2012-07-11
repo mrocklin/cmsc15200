@@ -21,6 +21,7 @@
 
   </head>
   <body>
+    <div id="wrapper">
     <!-- Header -->
     <div id="header">    
       {% include title.html %} 
@@ -31,11 +32,18 @@
       {% include navbar.html %} 
     </div>
 
+    <div id="content">
     <!-- Content -->
     {{ content }}
-    
+    </div>
+
     <!-- Footer -->
-    {% include footer.html %}
+    <div id="footer">
+      {% include footer.html %}
+    </div>
+
+    </div>
+    
   </body>
 </html>
 

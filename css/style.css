@@ -1,36 +1,39 @@
 body, html {
     padding : 0px;
-    margin : 0px;
     height : 100%;
+    font-family: helvetica, sans-serif;
+    font-size: small;
 } 
 
 #wrapper {
-    width:900px;
-    height:100%;
-    margin: 0px;
-    padding: 0px;
+    width:960px;
+    margin: 0 auto;
 }
 
 #header {
-    height:5%;
+    height:10%;
     background-color:#FFF;
-    width:900px;
+    margin: 10px auto;
+    width:100%;
 }
 #navbar {
     background-color:#FFF;
     width:200px;
-    height:90%;
     float:left;
 }
-ul {
+
+#navbar ul{
     padding:5;
     list-style:none;
 }
 
+
 #content {
-    height:90%;
+    float: left;
+    width: 760px;
     background-color:#FFF;
-    width:700px;
-    float:left;
 }
 
+#footer {
+    clear: both;
+}
