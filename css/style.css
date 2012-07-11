@@ -11,10 +11,13 @@ body, html {
 }
 
 #header {
-    height:10%;
+    height:7%;
     background-color:#FFF;
-    margin: 10px auto;
     width:100%;
+    border-bottom: 1px solid #000;
+}
+#header h1{
+    font-size: 250%;
 }
 #navbar {
     background-color:#FFF;
@@ -30,10 +33,14 @@ body, html {
 
 #content {
     float: left;
-    width: 760px;
+    width: 740px;
     background-color:#FFF;
+    padding-left: 10px;
+    border-left: 1px solid #000;
 }
 
 #footer {
+    border-top: 1px solid #000;
+    font-color: #888;
     clear: both;
 }
