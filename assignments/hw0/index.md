@@ -70,7 +70,7 @@ screen. To do this you will need to change the `helloworld.c` code with the text
 
 When `gcc` runs we don't want it to print anything out. If it does print
 something out it means that something is wrong, usually a compile error. When
-this happens to you check out [this explanation](/tips/errors.html) on compile time
+this happens to you check out [this explanation]({{site.baseurl}}/tips/errors.html) on compile time
 errors.
 
 For this task you will submit both the code and the executable. This is the only time when we will ask for the executable. In the future we will only want your code. 
