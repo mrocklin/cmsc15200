@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* Please answer a basic form about your background [here](tips/entry-form.html)
+
 * This webpage is under construction. Much of the information here is from
 2011.
 
