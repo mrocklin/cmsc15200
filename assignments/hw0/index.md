@@ -19,10 +19,8 @@ This is the most basic C program. It prints "Hello World!" to the screen. Our fi
 A Few Linux Commands 
 --------------------
 
-Open a terminal by going to **Applications:Accessories:Terminal**. You may want
-to right click on the Terminal option and select "Add this launcher to Panel"
-to make this useful program accessible on the top panel of the screen. We'll
-use it quite a bit. Now type
+Open a terminal by going to **Applications:Accessories:Terminal** or by
+pressing `Ctrl-Alt-T`. Now type
 
     pwd
 
