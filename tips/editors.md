@@ -32,8 +32,12 @@ OS-X.
 Text Editors
 ------------
 
-Linux
-`````
+Some programmers prefer the simplicity of using a text editor along with a
+separate compiler tool (gcc). Text editors offer fewer features out of the box
+(like completion, automatic detection of errors, etc...) but are far less
+complex.
+
+**Linux**
 
 On the Maclab machines you have the following options
 
@@ -44,20 +48,25 @@ On the Maclab machines you have the following options
 
 Emacs and vim are common enough to be available on all platforms.
 
-Windows
-```````
+**Windows**
 
-Notepad++ is a well-loved text editor. There are several alternatives. 
-[The relevant stackoverflow
-discussion](http://stackoverflow.com/questions/14155/windows-based-text-editors)
+[Notepad++](http://notepad-plus-plus.org/)
+is a well-loved text editor. There are several alternatives. 
+[The relevant stackoverflow discussion](http://stackoverflow.com/questions/14155/windows-based-text-editors)
 has some good suggestions.
 
-Mac
-```
+**Mac**
 
 [TextMate](http://macromates.com/)
 is an excellent editor although it does cost money. There is a 30 day
 free trial that may interest you. 
 Alternatively you could check out the top posts listed on the 
-[stackoverflow discussion for macs.]
-(http://stackoverflow.com/questions/14155/windows-based-text-editors)
+[stackoverflow discussion for macs.](http://stackoverflow.com/questions/14155/windows-based-text-editors)
+
+Remote
+------
+
+Another solution to building a working development environment on your home
+computer is simply to depend on the installation in the MacLab. Remoting in is
+simple, convenient and means that all of your work is in one place. See the
+pages about [ssh](remote.html) and [NX](nx.html).
