@@ -37,8 +37,8 @@ Bookstore](http://goo.gl/maps/qHRA) and at Amazon. Neither are required but gett
 Tentative Grading Scheme
 ------------------------
 
- * Programming assignments: 65%
- * Weekly Quizzes: 35%
+ * Programming assignments: 60%
+ * Weekly Quizzes: 40%
 
 Differences in the Summer
 -------------------------
