@@ -36,6 +36,8 @@ or [WinSCP](http://winscp.net/eng/index.php) for Windows machines. Again, you wi
 NX
 --
 
+See [NX](nx.html)
+
 
 Finding a computer to log into 
 ------------------------------
