@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Hello World 
-due: Tuesday July 24th, 8pm
+due: Wednesday July 25th, start of lecture
 ---
 
 Introduction
@@ -123,8 +123,12 @@ Decrease the stepsize to increase the number of rows in the table. Set the step 
 
 Submit your `ftoc.c` code with step size equal to one. 
 
-Task two
---------
+Task two - challenge
+--------------------
+
+_reminder_ : Challenge problems are worth far less credit than the effort that
+they require. You are encouraged to try them but do not worry too much if they
+are too difficult. 
 
 This program converts degrees Fahrenheit (F) to degrees Celsius (C) by the following formula 
 
