@@ -25,4 +25,6 @@ Instructor - [Matthew Rocklin](http://matthewrocklin.com) - mrocklin cs uchicago
 
 Office Hours - M,F 11am-12pm in the Maclab. Additional hours announced in class on a week by week basis. 
 
-Graders - TBA
+Graders - Luke Peeler, Joe Ellis 
+
+Listhost - e-mail questions to cmsc15200-s12-staff@googlegroups.com
