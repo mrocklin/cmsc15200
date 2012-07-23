@@ -12,7 +12,7 @@ right clicking and selecting `Save as...`
 Alternatively if you want to download these files directly you can clone this
 repository onto your local machine with the following linux commands
 
-    git://github.com/mrocklin/cmsc15200.git
+    git clone git://github.com/mrocklin/cmsc15200.git
     cd cmsc15200
     git checkout gh-pages
     cd examples
