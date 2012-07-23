@@ -76,11 +76,12 @@ For this task you will submit both the code and the executable. This is the only
 Rectangles 
 ----------
 
-Download the file [rect.c](rect.c) and move it to the Desktop. If you need to move your working directory from <code>/home/username/Desktop</code> directory down a level to <code>/home/username/</code> you can type 
+Download the file [rect.c](rect.c) and move it to the Desktop. If you need to
+move your working directory from `/home/username/Desktop` directory down a level to `/home/username/` you can type 
 
     cd ..
 
-After moving rect.c compile it using <code>gcc </code> like you did in the last section and run the executable (be sure not to save over your executable from last section).
+After moving rect.c compile it using `gcc ` like you did in the last section and run the executable (be sure not to save over your executable from last section).
 
 Hopefully you see something like:
 
@@ -88,7 +89,7 @@ Hopefully you see something like:
 
 This simple program computes the area of a rectangle given the two side lengths. The area is computed by multiplying the width by the height. 
 
-Inspect this program with the text editor. The <code>printf</code> line may look somewhat cryptic but everything else should be familiar. Your task is to change this program to compute the perimeter of a rectangle given its length and width rather than the area.  
+Inspect this program with the text editor. The `printf` line may look somewhat cryptic but everything else should be familiar. Your task is to change this program to compute the perimeter of a rectangle given its length and width rather than the area.  
 
 Compile your code and test it. Make sure that the results make sense. 
 
@@ -101,7 +102,7 @@ Page 12 in the Kernighan and Ritchie Text gives an example program that
 produces a table matching temperatures in Fahrenheit to temperatures in
 Celsius. Download this Fahrenheit-to-Celcius code [ftoc.c](ftoc.c) to your Desktop. Compile and run the executable, look at the results, and then look at the code.
 
-This program is more complex than the previous two. It has similar elements like integer variables, <code>printf</code>, and mathematical expressions but it also contains some new elements like <code>while</code>. Additionally K and R's style is different. For example they declare variables
+This program is more complex than the previous two. It has similar elements like integer variables, `printf`, and mathematical expressions but it also contains some new elements like `while`. Additionally K and R's style is different. For example they declare variables
 
     int fahr, celsius;
     int lower, upper, step;
@@ -120,7 +121,7 @@ Task one
 
 Decrease the stepsize to increase the number of rows in the table. Set the step variable to 5 and see the effect this has on the output of the program. Do this again, setting the step size to 1. 
 
-Submit your <code>ftoc.c</code> code with step size equal to one. 
+Submit your `ftoc.c` code with step size equal to one. 
 
 Task two
 --------
@@ -133,7 +134,7 @@ A similar conversion is to change miles per hour (mph) to kilometers per hour (k
 
     kph = 1.6 * mph
 
-Copy the <code>ftoc.c</code> program to a new file, <code>mtok.c</code> by typing 
+Copy the `ftoc.c` program to a new file, `mtok.c` by typing 
 
     cp ftoc.c mtok.c
 
@@ -151,4 +152,4 @@ in the terminal. Edit this program so that it displays a table converting miles 
     90   144
     100  160
 
-Submit your <code>mtok.c</code> file
+Submit your `mtok.c` file
