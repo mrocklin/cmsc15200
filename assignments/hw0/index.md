@@ -32,11 +32,15 @@ You can list the files and directories in this directory by typing
     
     ls
     
-Do this now. There shouldn't be much there. You should see your Desktop directory and the helloworld.c file you just downloaded (Chromium downloads to your home directory by default). 
+Do this now. You should see your Desktop directory, a Downloads directory and
+a few others. Chromium downloads to your Download directory by default and this
+is where the helloworld.c file is now. List the files in downloads by typing 
+
+    ls Downloads
 
 Move the helloworld.c file to the Desktop by typing the following:
 
-    mv helloworld.c Desktop
+    mv Downloads/helloworld.c Desktop/helloworld.c
 
 Note that in Linux (and programming) upper and lower case matter. So make sure
 you type **D**esktop instead of **d**esktop! The `helloworld.c` file should appear on your desktop. 
