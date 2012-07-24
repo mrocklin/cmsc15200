@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* It is no longer necessary to submit a printout of the helloworld.exe file
+
 * Please answer a basic form about your background [here](tips/entry-form.html)
 
 * This webpage is under construction. Much of the information here is from
