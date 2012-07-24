@@ -11,13 +11,13 @@ Eclipse
 Today we focus on learning how to use Eclipse. Eclipse is an Interactive Development Environment (IDE) that we'll use to develop projects in C. This means that it has all of the tools required to develop and compile C code in one single program. If you like it's like BlueFish combined with gcc. We're using it because it has some other, nicer features that combine these two. 
 
 Eclipse can be opened by selecting **Applications : Programming : Eclipse** in
-the upper right of your screen or by opening a terminal and typing `eclipse`.
+the upper right of your screen or by opening a terminal (`ctrl-alt-T`) and typing `eclipse`.
 
 The first time you run Eclipse, you will be asked to choose a location for your workspace.  The workspace is where Eclipse will store all your files. By default, the workspace is:
             
-    /home/$USER/workspace
+    /home/username/workspace
     
-Where `$USER` is your CS account username. You can use this default value or choose a different one inside your home directory (the default is a good choice).
+Where `username` is your CS account username. You can use this default value or choose a different one inside your home directory (the default is a good choice).
 
 Unless you want to be asked for your workspace location every time you start Eclipse, make sure you check "Use this as the default and do not ask again".
 
@@ -27,15 +27,16 @@ Next, you will be shown a "Welcome to Eclipse" screen where you will be able to 
 
 The IDE is currently 'empty', and we need to create a new project to be able to
 start coding. To do this, select menu **File : New : Project**. You will be
-shown the following screen, where you need to choose **C : Managed Make C
-Project**
+shown the following screen, where you need to choose **C/C++ : C Project**.
 
-<img src="ManagedMakeCProject.png" alt="managed make C project" width="40%">
+
+<img src="c_project.png" alt="C project" width="40%">
 
 You'll have to choose a name for your project. This can be anything you like
-but can not include spaces. `lab1` is a fine name for today's project. 
+but can not include spaces. `lab1` is a fine name for today's project. Select **Executable : Empty Project** and click Finish
 
-Next you will be shown three screens titled "Select a type of project" and "Additional Project Settings" and possibly "Switch to C Perspective". You can safely press Next, Finish, and Yes without changing any settings. Now you will see your first project appear as an icon on the left panel. 
+Next you may be shown a screen "Switch to C/C++ Perspective". You can safely
+press Yes without changing any settings. Now you will see your first project appear as an icon on the left panel. 
 
 <img src="lab1Visible.png" alt="lab 1 visible" width="60%">
 
@@ -44,17 +45,24 @@ Next we'll add a .c source file which will hold our code. Right click on
 
 <img src="emptyhelloworld.png" alt="empty eclipse view" width="60%">
 
-The center panel is an editing window for the file <code>helloworld.c</code>. The bottom panel tells us what errors we have. Currently it's complaining that there isn't any reference to a <code>main()</code> function. Because there is an error a red square has appeared on the <code>lab1</code> project icon, letting us now that this project does not compile. 
+The center panel is an editing window for the file `helloworld.c`.
+The bottom panel tells us what errors we have (currently empty). 
 
-Lets make Eclipse happy by building a very simple hello world main program in the source file, <code>helloworld.c</code>
+Lets build a simple hello world C program in Eclipse. Write the following code
+into the code editing panel (center). 
 
-    #include &lt;stdio.h&gt;
+    #include <stdio.h>
 
     int main()
     {
         printf("Hello Eclipse!\n");
         return 0;
     }
+
+*Quick Linux Tip*: You can copy and paste in Linux very easily with your mouse.
+To copy just select the text by clicking and dragging. To paste middle click
+where you want it to go. You can try this by copying the code above to the
+center editing panel in Eclipse.
 
 Once we save this file, Eclipse will do a quick recompile and hopefully the error, "undefined reference to 'main'" will disappear. Hopefully no other errors arose. If they did, see if you can fix them using Eclipse's help. 
 
@@ -66,7 +74,12 @@ selecting **Run As : Run Local C/C++ Application**. A screen will come up asking
 
 Great! We can now use Eclipse to create, edit, compile and run files. We could do all these things before with gedit, gcc and the terminal so why Eclipse? Eclipse has two particularly useful features. 
 
-First, it will do its best to locate and highlight errors in your program each time you save. Try this now by intentionally creating at least three bugs in your program. Try making a variable and then misusing or mistyping it. Save (so that Eclipse recompiles) and see if your bug is highlighted. Remove a semicolon and see if Eclipse finds it. What happens?
+First, it will do its best to locate and highlight errors in your program each time you save. Try this now by intentionally creating at least three bugs in your program. Try making a variable and then misusing or mistyping it. Save (so that Eclipse recompiles) and see if your bug is highlighted. Remove a semicolon and see if Eclipse finds it. What happens? 
+
+You should note the error messages that occur in the bottom panel. These
+messages look very strange at first but you will eventually understand them.
+For now it is a good idea to see which messages are caused by which errors you
+create. Building this understanding now will help you find bugs in the future.
 
 Second, we use Eclipse for its debugger. The Eclipse debugger allows us to step through a program exactly as a computer executes it. This is very useful for finding difficult bugs. 
 
@@ -75,9 +88,9 @@ Using the Eclipse Debugger
 
 First, Make a new C project, named lab1_pow and then download this source file
 [pow.c](pow.c) which contains code to compute the power of one integer raised to another. To import the <code>pow.c</code> source file into the empty project <code>lab1_pow</code> you can either click and drag it onto the <code>lab1_pow</code> icon or copy (cp) or move (mv) it into the folder <code>/home/username/workspace/lab1_pow/</code>. 
-I.e. if you have downloaded pow.c to your home directory you could open a terminal window and type
+I.e. if you have downloaded pow.c to your Desktop directory you could open a terminal window and type
 
-    mv pow.c workspace/lab1_pow
+    mv Desktop/pow.c workspace/lab1_pow
 
 Look at the main function in the code. It initializes three integer variables <code> a, x, p</code> and then gets values for these variables from the user using the <code>scanf</code> function. It then computes a raised to the power x using the function <code>pow</code> and prints the value to the screen. Run this program and test it for yourself. You'll need to enter values for a and x into the console tab when requested. 
 
