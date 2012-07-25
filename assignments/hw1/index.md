@@ -12,6 +12,12 @@ In this assignment you will write several small programs to develop an understan
 When you're ready to submit your assignment please see the [submission
 guidlines](../../tips/submission.html)
 
+
+*WARNING* : Over the next 48 hours I will slightly adjust the submission
+requirements for the problems. These changes will be very small and you can
+safely work on the assignment. Please check back and reload the page before
+making your final submission.
+
 Problem 1-A: Geometry
 ---------------------
 A point in the real plane can be described by an x and y coordinate, written as (x, y). A line segment can be described by two points (x1, y1) and (x2, y2). The length of a line segment can be found by computing the following mathematical formula 
