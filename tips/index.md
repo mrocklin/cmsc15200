@@ -9,3 +9,4 @@ title: Tips
  * [Which editor should I use?](editors.html)
  * [Submission Guidelines](submission.html)
  * [SVN](svn.html)
+ * [How to use `math.h`](math.html)
