@@ -6,6 +6,10 @@ title: Basics
 Announcements
 -------------
 
+* [Submission instructions](tips/submission.html) and tips for using [SVN](tips/svn.html) have been posted
+
+* [HW1](assignments/hw1/index.html) has been posted. 
+
 * It is no longer necessary to submit a printout of the helloworld.exe file
 
 * Please answer a basic form about your background [here](tips/entry-form.html)
