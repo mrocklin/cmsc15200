@@ -61,10 +61,8 @@ into the code editing panel (center).
 
 *Quick Linux Tip*: You can copy and paste in Linux very easily with your mouse.
 To copy just select the text by clicking and dragging. To paste middle click
-where you want it to go. You can try this by copying the code above to the
+where you want it to go. That's it. You can try this by copying the code above to the
 center editing panel in Eclipse.
-
-Once we save this file, Eclipse will do a quick recompile and hopefully the error, "undefined reference to 'main'" will disappear. Hopefully no other errors arose. If they did, see if you can fix them using Eclipse's help. 
 
 Now lets run this program by right clicking on the `lab1` project icon,
 selecting **Run As : Run Local C/C++ Application**. A screen will come up asking which debugger you'd like to use, leave the default, "GDB Debugger" and press OK. The bottom panel should now have switched from Problems to Console. Console holds the output of the program. You can switch back to look at compilation problems any time by clicking on the "Problems" tab.
@@ -74,31 +72,40 @@ selecting **Run As : Run Local C/C++ Application**. A screen will come up asking
 
 Great! We can now use Eclipse to create, edit, compile and run files. We could do all these things before with gedit, gcc and the terminal so why Eclipse? Eclipse has two particularly useful features. 
 
-First, it will do its best to locate and highlight errors in your program each time you save. Try this now by intentionally creating at least three bugs in your program. Try making a variable and then misusing or mistyping it. Save (so that Eclipse recompiles) and see if your bug is highlighted. Remove a semicolon and see if Eclipse finds it. What happens? 
+Inline Errors
+-------------
+
+First, Eclipse will locate and highlight syntax errors in your program each time you save. Try this now by intentionally creating at least three bugs in your program. Try making a variable and then misusing or mistyping it. Save (so that Eclipse recompiles) and see if your bug is highlighted. Remove a semicolon and see if Eclipse finds it. What happens? 
 
 You should note the error messages that occur in the bottom panel. These
 messages look very strange at first but you will eventually understand them.
 For now it is a good idea to see which messages are caused by which errors you
 create. Building this understanding now will help you find bugs in the future.
 
-Second, we use Eclipse for its debugger. The Eclipse debugger allows us to step through a program exactly as a computer executes it. This is very useful for finding difficult bugs. 
 
 Using the Eclipse Debugger
 --------------------------
 
+Second, we use Eclipse for its debugger. The Eclipse debugger allows us to step through a program exactly as a computer executes it. This is very useful for finding difficult bugs. 
+
 First, Make a new C project, named lab1_pow and then download this source file
-[pow.c](pow.c) which contains code to compute the power of one integer raised to another. To import the <code>pow.c</code> source file into the empty project <code>lab1_pow</code> you can either click and drag it onto the <code>lab1_pow</code> icon or copy (cp) or move (mv) it into the folder <code>/home/username/workspace/lab1_pow/</code>. 
+[pow.c](pow.c) which contains code to compute the power of one integer raised to another. To import the `pow.c` source file into the empty project `lab1_pow` you can either click and drag it onto the `lab1_pow` icon or copy (cp) or move (mv) it into the folder `/home/username/workspace/lab1_pow/`. 
 I.e. if you have downloaded pow.c to your Desktop directory you could open a terminal window and type
 
     mv Desktop/pow.c workspace/lab1_pow
 
-Look at the main function in the code. It initializes three integer variables <code> a, x, p</code> and then gets values for these variables from the user using the <code>scanf</code> function. It then computes a raised to the power x using the function <code>pow</code> and prints the value to the screen. Run this program and test it for yourself. You'll need to enter values for a and x into the console tab when requested. 
+Look at the main function in the code. It initializes three integer variables
+` a, x, p` and then gets values for these variables from the user
+using the `scanf` function. It then computes `a` raised to the power
+`x` using the function `pow` and prints the value to the screen. Run this program and test it for yourself. You'll need to enter values for a and x into the console tab when requested. 
 
-Now we're going to use the debugger to step through the program and see what it does, line by line. We start by setting a <i>debug point</i> at the beginning of the main function. Do this by double clicking on the thin vertical bar just to the left of the code. A small blue "point" should appear as shown below. 
+Use this program to compute 2 raised to the power 13. 
+
+Now we're going to use the debugger to step through the program and see what it does, line by line. We start by setting a *debug point* at the beginning of the main function. Do this by double clicking on the thin vertical bar just to the left of the code. A small blue "point" should appear as shown below. 
 
 <img src="debugPoint.png" alt="debug point" width="40%">
 
-Now, rather than "Run" the program, we'll "Debug" it. Right click on the <code>lab1_pow</code> project icon, select <b> Debug As : Debug Local C/C++ Application</b>. If it asks you if you'd like to switch to the "debug perspective" the answer is Yes. You will be able to switch back any time by clicking on the "C/C++" button on the upper right of the program or by going to Window : Open Perspective : C/C++ 
+Now, rather than "Run" the program, we'll "Debug" it. Right click on the `lab1_pow` project icon, select **Debug As : Debug Local C/C++ Application**. If it asks you if you'd like to switch to the "debug perspective" the answer is Yes. You will be able to switch back any time by clicking on the "C/C++" button on the upper right of the program or by going to Window : Open Perspective : C/C++ 
 
 The Debug perspective offers several tabs with lots of interesting information. However, for basic debugging, we will only be interested in two tabs: the one actually containing our program and the "Variables" tab.
 
@@ -111,28 +118,50 @@ This means that the debugger is ready to process that line. However, it will not
 <img src="debugPerspectiveVariables.png" alt="debug window variables tab"
 width="50%">
 
-You will see a list of all the variables declared in the current scope. As expected in C/C++, uninitialized variables contain no significant value. Your values may be different than these.
+You will see a list of all the variables declared in the current scope. In C/C++, uninitialized variables contain no significant value. Your values may be different than these.
 
-Now, to run through the program press the F6 key ("Step over"). Notice how each press of the F6 key makes the debugger run through a single line. If you look at the console (in the bottom of the screen), you will see the program's output (you will have to focus on the console whenever a program line includes an input operation). Keep on running through the program until you reach the end of the program, observing how the values of the variables change.
+### Step Over
 
-In this example the variable names are the same in the main function and pow function. This need not be the case. 
+Now, to run through the program press the F6 key ("Step over"). Notice how each
+press of the F6 key makes the debugger run through a single line. If you look
+at the console (in the bottom of the screen), you will see the program's output
+(you will have to focus on the console whenever a program line includes an
+input operation). Keep on running through the program until you reach the end
+of the program, observing how the values of the variables change. When you
+reach `scanf` lines you will need to enter appropriate values into the console.
+
+### Step Into 
+
+Step over treats each line as a single step, this includes function calls.
+Sometimes we want to see what happens within a function. For this we will use
+step into. 
+
+Run through the program in debug mode again. This time, when the green bar is
+on the line 
+	
+    p = pow(a,x);
+
+Press the F5 / step into key. This will take you inside the pow function. You
+can now press F6 to step through these lines until this function returns. 
+
+Notice how the contents of the "Variables" tab changes. Run through the function line by line and observe how the values of the variables change. This function is an excellent example of a simple for loop.
 
 Breakpoints 
 -----------
 
-Running through the entire program line by line (from beginning to end) can be cumbersome. Sometimes, we might want to debug a very specific piece of code. In that case, we can specify a breakpoint. When using breakpoints, the debugger runs the program as usual and only pauses (and switches to "line-by-line mode") when it encounters a breakpoint.
+Running through the entire program line by line (from beginning to end) can
+be slow. Sometimes, we might want to debug a very specific piece of code. In that case, we can specify a breakpoint. When using breakpoints, the debugger runs the program as usual and only pauses (and switches to "line-by-line mode") when it encounters a breakpoint.
 
 For example, we can place a breakpoint when the pow() function is called. To do this, double-click on the left margin of the line where you want to place the breakpoint. A little blue icon will appear:
 
 <img src="secondDebugPoint.png" alt="break point" width="25%">
 
-When you start debugging the program, it will be paused in the first line as before. To instruct the debugger to start running the program until it encounters a breakpoint, click on the "Resume" button in the "Debug" tab. It is a green triangle that looks like a little "Play" button:
+When you start debugging the program, it will be paused in the first line as before. We can tell the debugger to start running the program until it encounters a breakpoint. Do this either by pressing F8 or click on the "Resume" button in the "Debug" tab. It is a green triangle that looks like a little "Play" button:
 
 <img src="resume.png" alt="Resume button" width="40%">
 
 The program will ask you for the values of a and x, but you will not have to run through that part of the program line by line. When you reach the call to pow(), the debugger will pause execution. At this point, if you press F6 as before, you will "Step Over" the function call. If you actually wanted to debug the pow() function, you can press the F5 key ("Step Into"), which instructs the debugger to step into the function that is being called.
 
-Step into the function and notice how the contents of the "Variables" tab changes. Run through the function line by line and observe how the values of the variables change.
 
 Make your own project
 ---------------------
