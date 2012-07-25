@@ -7,3 +7,5 @@ title: Tips
  * [How to access the MacLab Remotely with NX](nx.html)
  * [Compile-time errors with `gcc`](errors.html)
  * [Which editor should I use?](editors.html)
+ * [Submission Guidelines](submission.html)
+ * [SVN](svn.html)
