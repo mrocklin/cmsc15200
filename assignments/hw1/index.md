@@ -16,7 +16,7 @@ Problem 1-A: Geometry
 ---------------------
 A point in the real plane can be described by an x and y coordinate, written as (x, y). A line segment can be described by two points (x1, y1) and (x2, y2). The length of a line segment can be found by computing the following mathematical formula 
 
-<p><a href="http://www.codecogs.com/eqnedit.php?latex=\large \fn_cm d = \sqrt{(x_1-x_2)^2 @plus; (y_1-y_2)^2}" target="_blank"><img src="http://latex.codecogs.com/png.latex?\large \fn_cm d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}" title="\large \fn_cm d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\large \fn_cm d = \sqrt{(x_1-x_2)^2 @plus; (y_1-y_2)^2}" target="_blank"><img src="http://latex.codecogs.com/png.latex?\large \fn_cm d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}" title="\large \fn_cm d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}" /></a>
 
 Write a program, similar to the rect.c program from HW0 that computes the length of a line segment described by the four variables x1, y1, x1, y2 which can take on any values in the plane. These values can just be initialized directly in the code (i.e. you don't need to use `scanf`). Verify that your program works by testing the simple case (x1, y1) == (1, 1/2) and (x2, y2) == (0, 1+1/2). This should give the result of sqrt(2) == 1.41...
 
@@ -51,7 +51,7 @@ Imagine writing a similar function for quadilaterals (like rectangles) or pentag
 Problem 1-Submission
 --------------------
 
-<p> Please submit two files. One for 1-B and one for 1-C. Both should include the functions you wrote and a main which demonstrates that these functions work well.  
+Please submit two files. One for 1-B and one for 1-C. Both should include the functions you wrote and a main which demonstrates that these functions work well.  
 
 Problem 2-A: Ideal Weight 
 -------------------------
@@ -69,34 +69,38 @@ The formula is as follows. In every case, `h` stands for height
 in centimeters and `a` stands for age in years. The weight
 given by the formula is *in kilograms*.
 
-<blockquote> 
-<table width=60% border=1 cellpadding=5> 
-  <tr><td> 
-    <ul> 
-       <li>For males up to and including age 18, the ideal weight is
-       <blockquote>(<i><b>h</b></i> - 36) / 2</blockquote> 
-       <li>For males between age 19 and 55 inclusive, the ideal weight is
-       <blockquote> 
-       ((<i><b>h</b></i> - 36) / 2) + ((<i><b>a</b></i> - 18) / 7)
-       </blockquote> 
-       <li>For males between 56 and 75 inclusive, the ideal weight is
-       <blockquote> 
-       <nobr> 
-       ((<i><b>h</b></i> - 36) / 2) + ((37 / 7) - ((<i><b>a</b></i> - 55) / 4))
-       </nobr> 
-       </blockquote> 
-       <li>For males over the age of 76, the ideal weight is the same as for
-       males 18 or younger.<br><br> 
-       <li>For females, the calculations are the same as for males, but in
-       every case the calculation is finally multiplied by 0.86.
-       </ul> 
-  </td></tr></table> 
-</blockquote> 
-</p> 
+<table border="1" cellpadding="5"> 
+  <tr>
+    <td> 
+      <ul> 
+        <li>For males up to and including age 18, the ideal weight is
+        <blockquote>(<i><b>h</b></i> - 36) / 2</blockquote></li>
+        <li>For males between age 19 and 55 inclusive, the ideal weight is
+        <blockquote> 
+        ((<i><b>h</b></i> - 36) / 2) + ((<i><b>a</b></i> - 18) / 7)
+        </blockquote> </li>
+
+        <li>For males between 56 and 75 inclusive, the ideal weight is
+        <blockquote> 
+        <nobr> 
+        ((<i><b>h</b></i> - 36) / 2) + ((37 / 7) - ((<i><b>a</b></i> - 55) / 4))
+        </nobr> 
+        </blockquote> </li>
+
+        <li>For males over the age of 76, the ideal weight is the same as for
+        males 18 or younger.<br><br> </li>
+
+        <li>For females, the calculations are the same as for males, but in
+        every case the calculation is finally multiplied by 0.86.</li>
+
+     </ul> 
+   </td>
+  </tr>
+</table> 
  
 The function `ideal_weight` will have the following header:
 
-    double ideal_weight(char g, double h, int a)
+    float ideal_weight(char g, float h, int a)
 
 where `g`, `h` and `a` are understood to mean
 gender, height (in centimeters) and age, respectively.
@@ -106,7 +110,7 @@ ways. Here is a skeleton of one way, which you may use as a starting
 point if you like:
 
     // a function that calculates ideal weight
-    double ideal_weight(char g, double h, int a) {
+    float ideal_weight(char g, float h, int a) {
         if ((g == 'm') && (a <= 18)) 
         {
             return ...
@@ -151,7 +155,11 @@ are determined like this:
     C' = C - 0.30C + 0.00033CR
     R' = R - 0.016CR + 0.43R
  
-<img src=http://upload.wikimedia.org/wikipedia/commons/a/aa/Volterra_lotka_dynamics.PNG alt="Predator Prey Plot" width=40% align=right>
+<img
+src="http://upload.wikimedia.org/wikipedia/commons/a/aa/Volterra_lotka_dynamics.PNG"
+alt="Predator_Prey_Plot"
+align="right"
+width="40%">
 
 In each equation, the first term is the old size,
 the second term is the death rate (notice the minus sign)
