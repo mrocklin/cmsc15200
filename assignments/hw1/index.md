@@ -10,7 +10,7 @@ Introduction
 In this assignment you will write several small programs to develop an understanding of variables, conditional, loops, and functions. 
 
 When you're ready to submit your assignment please see the [submission
-guidlines](../../submissionGuidelines.html)
+guidlines](../../tips/submission.html)
 
 Problem 1-A: Geometry
 ---------------------
