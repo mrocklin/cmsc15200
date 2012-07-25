@@ -5,6 +5,29 @@ title: Lab 1 - Eclipse
 
 Welcome to lab. Lab is for you to try out new technology or ideas with an instructor present to answer questions immediately if they arise.
 
+SVN
+---
+
+We will use SVN to communicate homework between the instructor, students and
+graders. After lab you are encouraged to read a [basic document about using
+SVN](../../tips/svn.html)
+
+For now, please open up a terminal `Ctrl-Alt-T` and type in the following
+commands
+
+    cd
+    svn co https://phoenixforge.cs.uchicago.edu/svn/username-152
+    cd username-152
+    ls
+
+but replace `username` with your CNetID. This downloads a special directory
+that will contain all of your homeworks. The `ls` command lists all of the
+files in this directory. You should see `lab1-pow` and `hw1` subdirectories.
+
+*Quick Linux Tip*: You can copy and paste in Linux very easily with your mouse.
+To copy just select the text by clicking and dragging. To paste middle click
+where you want it to go. That's it.
+
 Eclipse
 -------
 
@@ -17,20 +40,24 @@ The first time you run Eclipse, you will be asked to choose a location for your 
             
     /home/username/workspace
     
-Where `username` is your CS account username. You can use this default value or choose a different one inside your home directory (the default is a good choice).
+Where `username` is your CS account username. Change this to point to your
+SVN directory. I.e. change it to 
 
+    /home/username/username-152
+    
 Unless you want to be asked for your workspace location every time you start Eclipse, make sure you check "Use this as the default and do not ask again".
 
-Next, you will be shown a "Welcome to Eclipse" screen where you will be able to access tutorials, help documents, ... Choose "Workbench" to enter the Eclipse IDE proper. You should now see the following:
+Next, you will be shown a "Welcome to Eclipse" screen where you will be able to
+access tutorials, help documents, ... Choose "Workbench" in the upper right to
+enter the Eclipse IDE proper. You should now see something like the following:
 
 <img src="empty.png" alt="Eclipse StartUp" width="60%">
 
-The IDE is currently 'empty', and we need to create a new project to be able to
+The IDE is currently empty, and we need to create a new project to be able to
 start coding. To do this, select menu **File : New : Project**. You will be
 shown the following screen, where you need to choose **C/C++ : C Project**.
 
-
-<img src="c_project.png" alt="C project" width="40%">
+<img src="c-project.png" alt="C project" width="40%">
 
 You'll have to choose a name for your project. This can be anything you like
 but can not include spaces. `lab1` is a fine name for today's project. Select **Executable : Empty Project** and click Finish
@@ -46,27 +73,23 @@ Next we'll add a .c source file which will hold our code. Right click on
 <img src="emptyhelloworld.png" alt="empty eclipse view" width="60%">
 
 The center panel is an editing window for the file `helloworld.c`.
-The bottom panel tells us what errors we have (currently empty). 
+The bottom panel tells us what errors we have (currently empty) and also
+displays our output. 
 
 Lets build a simple hello world C program in Eclipse. Write the following code
-into the code editing panel (center). 
+into the code editing panel (center) just below the comments. 
 
     #include <stdio.h>
 
-    int main()
+    void main()
     {
         printf("Hello Eclipse!\n");
-        return 0;
     }
 
-*Quick Linux Tip*: You can copy and paste in Linux very easily with your mouse.
-To copy just select the text by clicking and dragging. To paste middle click
-where you want it to go. That's it. You can try this by copying the code above to the
-center editing panel in Eclipse.
 
 Now lets run this program by right clicking on the `lab1` project icon,
-selecting **Run As : Run Local C/C++ Application**. A screen will come up asking which debugger you'd like to use, leave the default, "GDB Debugger" and press OK. The bottom panel should now have switched from Problems to Console. Console holds the output of the program. You can switch back to look at compilation problems any time by clicking on the "Problems" tab.
-
+selecting **Run As : Run Local C/C++ Application**. The bottom panel is now
+showing the Console tab. Console holds the output of the program. You can switch to look at compilation problems any time by clicking on the "Problems" tab.
 
 <img src="helloEclipse.png" alt="Hello Eclipse!" width="70%">
 
@@ -75,37 +98,59 @@ Great! We can now use Eclipse to create, edit, compile and run files. We could d
 Inline Errors
 -------------
 
-First, Eclipse will locate and highlight syntax errors in your program each time you save. Try this now by intentionally creating at least three bugs in your program. Try making a variable and then misusing or mistyping it. Save (so that Eclipse recompiles) and see if your bug is highlighted. Remove a semicolon and see if Eclipse finds it. What happens? 
+First, Eclipse will locate and highlight syntax errors in your program each
+time you save. Try this now by intentionally creating at least three bugs in
+your program, trying to run, and then seeing which errors occur in the
+problems tab. Try producing the following errors. 
 
+ * Remove a semicolon
+ * Capitalize `printf` to `Printf`
+ * Assign to a variable that has not yet been declared (i.e. write `age=13;` without writing `int age;` above it.
+ 
 You should note the error messages that occur in the bottom panel. These
-messages look very strange at first but you will eventually understand them.
-For now it is a good idea to see which messages are caused by which errors you
+messages look very strange at first but you will learn to recognize
+and understand them. Also note how Eclipse will highlight the bad line of code.
+If you hover your mouse over the highlighted line it will give you the
+appropriate error message. 
+It is a good idea to see which messages are caused by which errors you
 create. Building this understanding now will help you find bugs in the future.
-
 
 Using the Eclipse Debugger
 --------------------------
 
 Second, we use Eclipse for its debugger. The Eclipse debugger allows us to step through a program exactly as a computer executes it. This is very useful for finding difficult bugs. 
 
-First, Make a new C project, named lab1_pow and then download this source file
-[pow.c](pow.c) which contains code to compute the power of one integer raised to another. To import the `pow.c` source file into the empty project `lab1_pow` you can either click and drag it onto the `lab1_pow` icon or copy (cp) or move (mv) it into the folder `/home/username/workspace/lab1_pow/`. 
-I.e. if you have downloaded pow.c to your Desktop directory you could open a terminal window and type
+There is an example in the `lab1-pow` sub-directory in your svn directory.
+Import it into Eclipse by making a new C project with the name `lab1-pow`
 
-    mv Desktop/pow.c workspace/lab1_pow
+Double click on the pow.c file within this project and look at the main function in the code. It initializes three integer variables
+`a, x, p` and then gets values for these variables from the user
+using the `scanf` function. 
 
-Look at the main function in the code. It initializes three integer variables
-` a, x, p` and then gets values for these variables from the user
-using the `scanf` function. It then computes `a` raised to the power
-`x` using the function `pow` and prints the value to the screen. Run this program and test it for yourself. You'll need to enter values for a and x into the console tab when requested. 
+`scanf` is like `printf` in reverse. It takes input from the console and
+pushes it into a variable. We will use it only rarely in this class.
 
-Use this program to compute 2 raised to the power 13. 
+`main` then computes `a` raised to the power `x` using the function `pow` and
+prints the value to the screen. Run this program and test it for yourself. You'll need to enter values for a and x into the console tab when requested. 
+
+Use this program to compute 2 raised to the power 13 and then run it again to
+compute 3 raised to the power 4.
+
+At this stage your screen should look something like this:
+
+<img src="lab1-pow.png" alt="lab1-pow" width="70%">
 
 Now we're going to use the debugger to step through the program and see what it does, line by line. We start by setting a *debug point* at the beginning of the main function. Do this by double clicking on the thin vertical bar just to the left of the code. A small blue "point" should appear as shown below. 
 
 <img src="debugPoint.png" alt="debug point" width="40%">
 
 Now, rather than "Run" the program, we'll "Debug" it. Right click on the `lab1_pow` project icon, select **Debug As : Debug Local C/C++ Application**. If it asks you if you'd like to switch to the "debug perspective" the answer is Yes. You will be able to switch back any time by clicking on the "C/C++" button on the upper right of the program or by going to Window : Open Perspective : C/C++ 
+
+You will need to select which debugger you'd like to use. Check the box at the
+top and select the middle option
+
+<img src="gdb-selection.png" alt="select a debugger" width="40%">
+
 
 The Debug perspective offers several tabs with lots of interesting information. However, for basic debugging, we will only be interested in two tabs: the one actually containing our program and the "Variables" tab.
 
@@ -118,7 +163,10 @@ This means that the debugger is ready to process that line. However, it will not
 <img src="debugPerspectiveVariables.png" alt="debug window variables tab"
 width="50%">
 
-You will see a list of all the variables declared in the current scope. In C/C++, uninitialized variables contain no significant value. Your values may be different than these.
+You will see a list of all the variables declared in the current scope. In
+C/C++, uninitialized variables contain no significant value. Your values may be
+different than these. Watch this panel as we move forward in the lab - it will
+always contain the current values of the active variables.
 
 ### Step Over
 
@@ -146,6 +194,10 @@ can now press F6 to step through these lines until this function returns.
 
 Notice how the contents of the "Variables" tab changes. Run through the function line by line and observe how the values of the variables change. This function is an excellent example of a simple for loop.
 
+We encourage you to run this program a few times with different inputs. Each
+time you should step into the pow function and watch the for loop work. It is
+important to understand exactly how loop structures behave.
+
 Breakpoints 
 -----------
 
@@ -166,13 +218,36 @@ The program will ask you for the values of a and x, but you will not have to run
 Make your own project
 ---------------------
 
-Now you will use Eclipse to complete an assignment. You will have to create a new project, create a new source file, write some code, fix errors, and finally run that project. 
+We will now go through all the steps necessary to use Eclipse for your
+homework. Your svn directory also contains directories named `hw1-geometry`,
+`hw1-weight`, and `hw1-cats`. These are the three problems for
+[HW1](../../assignments/hw1/index.html).
 
-Write a program which asks the user to input n numbers (integers) one by one. You may set n to three to start (no need to use scanf for this part). After the user has entered each of the numbers you will print out their maximum. You will need to make a max function and keep track of the current max as the numbers come in. This is very similar to the min function and the sum exercise that we did in class. 
+Lets get started on the homework by creating an Eclipse project for the first
+part of HW1, `hw1-geometry`. Make an Eclipse project whose name matches the 
+name of the directory (`hw1-geometry` in this case). Ensure that the
+`geometry.c` file is accessible in Eclipse. 
 
-An example execution of your program might look like this.
+We want to make sure that you know how to submit your work via svn. To test
+this we're going to make a very small change to this file and then submit that
+small change up to the server. 
 
-    Enter number 1: 5
-    Enter number 2: 7
-    Enter number 3: 2
-    The maximum number that you entered was 7
+Add your name at the top just after the text `Author: `
+
+Open up a terminal (if you don't have one up already) and `cd` to your svn
+directory 
+
+    cd               # this resets your location to /home/username
+    cd username-152
+
+(change `username` to your username). Now check in your work with an informative message
+
+    svn ci -m"Added name to geometry.c file"
+
+That's it! You should see some text that says transmitting
+`hw1-geometry/geometry.c`
+Your changes have been submitted and can be seen by the graders and the
+instructor.
+
+We encourage you now to start working on your homework while you have teaching
+staff present. Alternatively you can go outside and enjoy the sun. 
