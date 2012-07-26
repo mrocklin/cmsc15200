@@ -24,4 +24,5 @@ If we count down five lines we see the '<code>}</code>' but why it expected a ';
 
 So error messages take a little practice to understand fully. In the meantime it's always good to look at the line number which appaers just after the filename like 5 does in <code> helloworld.c:5:1 </code>. Then look around in your code at this location to see if anything looks odd. Perhaps you misspelled something, are using capitalization incorrectly, missing a semi-colon, parenthesis, equals sign, etc....
 
-*So what do I do if I can't find the error?* Please do not spend hours searching for a bug. Instead, try posting the error to the listhost. Hopefully some other student will have already had this error and a message will have gone out explaining it. If you're the first one then you'll get to help all the other students by asking a question. Other solutions include coming back to the problem later and also coming to office hours. 
+*So what do I do if I can't find the error?* Please do not spend hours
+searching for a bug. Instead, try posting the error to the staff listhost. If you're the first one then you'll get to help all the other students by asking a question. Other solutions include coming back to the problem later and also coming to office hours. 
