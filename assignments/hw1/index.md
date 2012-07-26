@@ -1,4 +1,4 @@
----
+--
 layout: assignment 
 title: Geometry, Weight, and Cats
 due: Sunday July 29th, 8pm
@@ -11,12 +11,6 @@ In this assignment you will write several small programs to develop an understan
 
 When you're ready to submit your assignment please see the [submission
 guidlines](../../tips/submission.html)
-
-
-*WARNING* : Over the next 48 hours I will slightly adjust the submission
-requirements for the problems. These changes will be very small and you can
-safely work on the assignment. Please check back and reload the page before
-making your final submission.
 
 Problem 1-A: Geometry
 ---------------------
@@ -57,7 +51,11 @@ Imagine writing a similar function for quadilaterals (like rectangles) or pentag
 Problem 1-Submission
 --------------------
 
-Please submit two files. One for 1-B and one for 1-C. Both should include the functions you wrote and a main which demonstrates that these functions work well.  
+Please submit one file named `geometry.c` that contains
+
+* A function to compute the distance between two points
+* A function to compute the perimeter of a triangle
+* A `void main` function that demonstrates that the above two functions work correctly.
 
 Problem 2-A: Ideal Weight 
 -------------------------
@@ -144,9 +142,15 @@ the precision of numbers. [This page](http://www.codingunit.com/printf-format-sp
 Problem 2-Submission
 --------------------
 
-You should submit two .c files. One for 2-A and one for 2-B. The first should have a main function which demonstrates that your function works for a few known inputs (you should work out the values by hand to check). The second should have a main function which prints a table. Each file should have the ideal_weight function included. 
+You should submit one .c file. It should contain
 
+* The `ideal_weight` function
+* A `void main` that has 
+    * Some simple tests that demonstrate that `ideal_weight` works correctly (2-A)
+    * Code that prints the table from (2-B)
+ 
 Problem 3 : The Island of FOO
+-----------------------------
 
 On the small island of FOO live a family of wild cats and a large nest of rats.
 The rats breed prolifically, providing food for the cats.
@@ -192,7 +196,7 @@ For example, the first part of your table should look like this:
 Problem 3-Submission
 --------------------
 
-You should submit a single .c file that, when run, produces a table.  
+You should submit a single .c file that, when run, produces a table.
 
 Problem - Challenge : Population Stability on the Island of FOO
 ---------------------------------------------------------------
@@ -207,16 +211,23 @@ This result shows that there were -12.9 rats. Fractional Rats exist in FOOLand, 
 
 The problem is that we are updating the Rat and Cat population every month; this is too infrequent. We need to change our code so that we can control the size of the timestep. This will allow us to step forward by 10ths of a month or 100ths of a month. The birth rate and death rate terms in the update equations will need to be reduced by this same factor (these were the second and third terms in each expression).
 
-Change you program to have a variable timestep. Turn this program into a function that takes in a timestep and returns the number of months (not steps) before one of the species goes extinct. Run your function a few times in main with different time steps. Observe the results.
+Change your program to have a variable timestep. Turn this program into a function that takes in a timestep and returns the number of months (not steps) before one of the species goes extinct. Run your function a few times in main with different time steps. Observe the results.
 
 Does changing the stepsize affect the stability of the Rat/Cat population? If yes, how so? Can you detect how the timestep affects the time of extinction? Given that nature is continuous (i.e. the timestep is infinitessimal) what can you say about the eventual fate of Rats and Cats on the island of FOO? Should we expect to see them 1000 years from today? 
 
 Problem Challenge - Submission 
---------------------------------
+------------------------------
 
-You should submit a separate .c file for this problem. It should include the simulation function, and a main which uses the simulation function to print out a few values. You should answer the questions as comments at the bottom of the file. 
+You should submit a separate file `cats-challenge.c` for this problem. It should include the simulation function and a main which uses the simulation function to print out a few values. You should answer the questions as comments at the bottom of the file. 
 Specific questions that were asked were:
 
  * At what month does the original simulation produce negative results?
- * How does extinction time depend on the timestep?
+ * How does extinction time depend on the timestep? (be precise for full credit)
  * Will Rats/Cats be on the island in 1000 years?
+
+SVN Issue - make sure that you add this new `.c` file to your repository using
+`svn add`. You will also have to check-in after you add. 
+
+Eclipse Issue - Having two `main` functions in the same project can cause
+difficulties. You can solve this problem in many ways (make a new project, use
+gcc, etc...). 
