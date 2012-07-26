@@ -50,10 +50,10 @@ server, you will update your computer's directory by typing `svn up`
     svn ci -m"An informative message"
 
 This sends the work you have done on your computer up to the server. This is
-how you submit your homework. `CI` stands for "Check in". When you check in you
-have the option of recording a small message. Examples of messages might be
-*"Turning in HW1"* or *"Solved part 1"*. You can check in many times before the
-deadline. See the section below.
+how you submit your homework. `CI` stands for "Check in" or "Commit". 
+When you check in you have the option of recording a small message. 
+Examples of messages might be *"Turning in HW1"* or *"Solved part 1"*. 
+You can check in many times before the deadline. See the section below.
 
     svn add some_new_file
 
