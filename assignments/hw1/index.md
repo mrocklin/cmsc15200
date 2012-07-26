@@ -1,4 +1,4 @@
---
+---
 layout: assignment 
 title: Geometry, Weight, and Cats
 due: Sunday July 29th, 8pm
