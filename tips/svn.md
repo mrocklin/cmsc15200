@@ -11,14 +11,14 @@ You can access the UChicago SVN server through a web interface
 
 Both you and the course staff have access to the following repository
 
-    https://phoenixforge.cs.uchicago.edu/svn-internal/username-152
+    https://phoenixforge.cs.uchicago.edu/svn/username-152
 
 where `username` should be replaced by your CNetID. 
 
 On a UNIX based system you can check out this repository with the `svn co`
 command. `co` stands for check out
 
-    svn co https://phoenixforge.cs.uchicago.edu/svn-internal/username-152
+    svn co https://phoenixforge.cs.uchicago.edu/svn/username-152
 
 If you're running OS-X and prefer a GUI environment you may want to look at
 some of the options listed on [this stackoverflow
