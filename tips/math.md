@@ -22,7 +22,8 @@ Library*. Check out the [wikipedia page](http://en.wikipedia.org/wiki/C_standard
 Eclipse
 -------
 
-You can add library flags in Eclipse by right clicking on the project icon on the left side of the screen and then going to Properties : C/C++ Build (on the left) : GCC C Linker : Libraries : Click little green icon left of "Libraries (-l)" : Type in 'm' and press OK : Press OK on main window
+You can add library flags in Eclipse by right clicking on the project icon on
+the left side of the screen and then going to Properties : C/C++ Build (on the left) : Settings : GCC C Linker : Libraries : Click little green icon to the right of "Libraries (-l)" : Type in 'm' and press OK : Press OK on main window
 
 ` Undefined reference to sqrt` error even though the code seems fine. 
 
@@ -30,8 +31,4 @@ You can add library flags in Eclipse by right clicking on the project icon on th
 
 Right click on the project icon (mathtest in this example) and go here to fix it. 
 
-<img src="images/sqrt2.png" alt="Fixing math.h linker compilation error" width="60%">
-
-
-
-
+<img src="images/sqrt2.png" alt="Fixing math.h linker compilation error" width="80%">
