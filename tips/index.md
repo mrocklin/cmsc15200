@@ -10,3 +10,4 @@ title: Tips
  * [Submission Guidelines](submission.html)
  * [SVN](svn.html)
  * [How to use `math.h`](math.html)
+ * [How unit-test with `assert.h`](assert.html)
