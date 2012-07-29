@@ -87,32 +87,33 @@ Outliers are values in our dataset which seem very high or very low given the me
 
 Write three functions that return 
 
-* How many outliers a dataset contains
-* An array containing the index (location) of those outliers
-* An array containing the values of those outliers
+1. How many outliers a dataset contains
+2. An array containing the index (location) of those outliers
+3. An array containing the values of those outliers
 
 Were there any outliers in the class test scores example?
 
     [64 98 66 60 67 64 70 73 59 75 35 75 ]
     Z Scores: [-0.219489 2.137129 -0.080864 -0.496738 -0.011552 -0.219489 0.196385 0.404322 -0.566050 0.542946 -2.229545 0.542946 ]
  
-Yes! There were two outliers (question 1)
+Yes! There were two outliers (result from function 1)
 
-They occured at indices `[1, 10]`
+They occured at indices `[1, 10]` (result from function 2)
 
-They had the values `[98.0 35.0]`
-
-Development Flow
-----------------
-
-This assignment will also introduce you to testing.
+They had the values `[98.0 35.0]` (result from function 3)
 
 Submission
+----------
 
 Please submit one large .c file, not several small ones.
 
-Scanf should not appear in your code. 
+Scanf should not appear in your code. All of the functions mentioned in this
+assignment should return values. None of the functions mentioned in this
+assignment should print.
 
-Your functions should be unit-tested using [assert.h](../../tips/assert.html)
+Your functions should be [unit-tested using assert.h](../../tips/assert.html)
 
-There should be no logic in your main function. Your goal is to produce useful functions that can be used by anyone. Your functions are portable, your main is not. 
+There should be no logic in your main function. Your goal is to produce useful
+functions that can be used by anyone. Your functions are portable, your main is
+not. You should use `main` just to print out results as you write your code and
+to run tests.
