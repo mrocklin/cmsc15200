@@ -40,8 +40,8 @@ Problem 2: Standard Deviation
 
 The sample standard deviation is (roughly) the expected difference between the numbers in the list and the mean. If the numbers are all very close to the mean then it will be low. If there is a large spread in the numbers then the sample standard deviation will be high.  For example the following two lists have the same mean (2) but very different sample standard deviations:
 
-1. The list [1, 2, 0, 2, 3, 1, 3, 4] has a sample standard deviation around 1. The numbers tend to deviate from the mean (here equal to 2) by about 1. 
-2. The list [2, 2, 2, 2, 2, 2, 2, 2] has sample standard deviation 0 (there is no deviation from the mean). 
+1. The list `[1, 2, 0, 2, 3, 1, 3, 4]` has a sample standard deviation around 1. The numbers tend to deviate from the mean (here equal to 2) by about 1. 
+2. The list `[2, 2, 2, 2, 2, 2, 2, 2]` has sample standard deviation 0 (there is no deviation from the mean). 
 
 The formula for the sample standard deviation **sigma**  of an array **x** of length **n** with mean **mu** is as follows
 
@@ -52,11 +52,11 @@ Write a function which takes an array and it's length and returns the standard d
 Problem 3: Z-Scores
 -------------------
 
-If these are new to you I'll explain them below. You should also consider the <a href=http://en.wikipedia.org/wiki/Zscore>explanation of z-scores on wikipedia</a>
+If these are new to you I'll explain them below. You should also consider the
+<a href="http://en.wikipedia.org/wiki/Zscore">explanation of z-scores on wikipedia</a>
 
 We want to normalize an array so that it has mean zero and standard deviation one. Consider the grades on a test for a small class: 
 `[64 98 66 60 67 64 70 73 59 75 35 75 ]`
-<!--<img src=data.png alt="Some normally distributed data" width=30% align=right>-->
 
 This dataset has mean 67.166667 and standard deviation 14.427457
 
@@ -64,7 +64,6 @@ I would like to scale and recenter this dataset so that the mean is zero and the
 
 `Z Scores: [-0.219489 2.137129 -0.080864 -0.496738 -0.011552 -0.219489 0.196385 0.404322 -0.566050 0.542946 -2.229545 0.542946 ]`
 
-<!--<img src=zscores.png alt="Some normalized normally distributed data" width=30% align=right>-->
 The first score 64, has zscore -.21. This means that it is -.21 standard deviations below the mean. We verify this by checking that the mean is 67, that 64-67 is -3 and that -3 is a little more than a negative fifth (-.21) of a standard deviation (14.4). 
 
 Z-scores give us a good way to quickly judge how good a score is without thinking about the average or spread of the data. 
@@ -99,9 +98,9 @@ Were there any outliers in the class test scores example?
  
 Yes! There were two outliers (question 1)
 
-They occured at indices [1, 10]
+They occured at indices `[1, 10]`
 
-They had the values [98.0 35.0] 
+They had the values `[98.0 35.0]`
 
 Development Flow
 ----------------
@@ -113,5 +112,7 @@ Submission
 Please submit one large .c file, not several small ones.
 
 Scanf should not appear in your code. 
+
+Your functions should be unit-tested using [assert.h](../../tips/assert.html)
 
 There should be no logic in your main function. Your goal is to produce useful functions that can be used by anyone. Your functions are portable, your main is not. 
