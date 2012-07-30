@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* [HW2](assignments/hw2/index.html) has been posted. 
+
 * Submission instructions for HW1 have been clarified
 
 * [Submission instructions](tips/submission.html) and tips for using [SVN](tips/svn.html) have been posted

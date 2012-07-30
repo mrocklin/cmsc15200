@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Arrays 
-due: 
+due: Thursday August 2nd, 8pm
 ---
 
 Introduction
