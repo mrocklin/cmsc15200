@@ -102,14 +102,31 @@ They occured at indices `[1, 10]` (result from function 2)
 
 They had the values `[98.0 35.0]` (result from function 3)
 
+Development Flow
+----------------
+
+Update your svn repository and look at `hw2/arrays.c`. Please develop your
+solution within this file. 
+
+This assignment will also introduce you to testing. When you begin `arrays.c`
+already contains a function that sums an array and a function `test_sum` that
+tests the `sum` function. You can use this as a model for future function.
+There is also a test `test_mean` which includes a simple test for a `mean`
+function which is not yet fully written. 
+
+Compile and run this program. It should produce a *runtime error* on the
+failing test. Your first step should be to improve the mean function so that
+this test passes
+
 Submission
 ----------
 
-Please submit one large .c file, not several small ones.
+Please submit one large .c file, not several small ones. Please write your
+solution into the file `hw2/arrays.c`.
 
-Scanf should not appear in your code. All of the functions mentioned in this
-assignment should return values. None of the functions mentioned in this
-assignment should print.
+You should not use `scanf`. All of the non-testing functions 
+mentioned in this assignment should return values. None of the functions 
+mentioned in this assignment should print.
 
 Your functions should be [unit-tested using assert.h](../../tips/assert.html)
 
@@ -117,16 +134,3 @@ There should be no logic in your main function. Your goal is to produce useful
 functions that can be used by anyone. Your functions are portable, your main is
 not. You should use `main` just to print out results as you write your code and
 to run tests.
-
-Development Flow
-----------------
-
-This assignment will also introduce you to testing.
-
-Submission
-
-Please submit one large .c file, not several small ones.
-
-Scanf should not appear in your code. 
-
-There should be no logic in your main function. Your goal is to produce useful functions that can be used by anyone. Your functions are portable, your main is not. 
