@@ -117,3 +117,16 @@ There should be no logic in your main function. Your goal is to produce useful
 functions that can be used by anyone. Your functions are portable, your main is
 not. You should use `main` just to print out results as you write your code and
 to run tests.
+
+Development Flow
+----------------
+
+This assignment will also introduce you to testing.
+
+Submission
+
+Please submit one large .c file, not several small ones.
+
+Scanf should not appear in your code. 
+
+There should be no logic in your main function. Your goal is to produce useful functions that can be used by anyone. Your functions are portable, your main is not. 
