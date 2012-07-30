@@ -110,13 +110,25 @@ solution within this file.
 
 This assignment will also introduce you to testing. When you begin `arrays.c`
 already contains a function that sums an array and a function `test_sum` that
-tests the `sum` function. You can use this as a model for future function.
+tests the `sum` function using [`assert.h`](../../tips/assert.html). 
+You can use `sum` and `test_sum` as models for future functions.
+
 There is also a test `test_mean` which includes a simple test for a `mean`
 function which is not yet fully written. 
 
 Compile and run this program. It should produce a *runtime error* on the
-failing test. Your first step should be to improve the mean function so that
-this test passes
+failing test. 
+
+    arrays.c:42: test_mean: Assertion `mean(A, 3) == 2' failed
+
+This means that we failed a test. This is expected because the mean function
+doesn't currently work. Your first step should be to fix the mean function so 
+that it computes the average. Then recompile and rerun your tests. If your
+code is correct then this test should pass and you should see
+
+    Tests Pass!
+
+As you write the functions for this assignment you should also write tests.
 
 Submission
 ----------
