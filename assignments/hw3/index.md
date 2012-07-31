@@ -134,8 +134,8 @@ Reminder: Challenge problems are not necessary to receive a good grade in the cl
 You should just submit the normal files with this additional change. There is
 no need to submit the this challenge problem separately.
 
-Challenge 2 5%
---------------
+Challenge 2 - 5%
+----------------
 
 In this assignment we've asked you to produce a black and white image
 where black points go out to infinity eventually and white points always stay
