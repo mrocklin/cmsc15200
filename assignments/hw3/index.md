@@ -30,7 +30,7 @@ For a variable point (x,y) and a constant point (cx, cy) consider the following 
 
 If you're familiar with complex numbers this is just the map `z' = z^2 + c ` (knowledge of complex numbers is not necessary for this project). 
 
-Starting from a given point (x,y) we can apply this same process again and again. Some points, like (1,1) quickly move away from the origin. For example if we use cx = -.618, cy = 0 we watch how the point (1,1) evolves through this *iterated map*
+Starting from a given point (x,y) we can apply this same process again and again. Some points, like (1,1) quickly move away from the origin. For example if we use cx = -.618, cy = 0 we watch how the point (1,1) evolves 
 
     (1,1) => (-.618, 2)
     (-.618, 2) => (-4.23, -2.47)
@@ -55,7 +55,19 @@ The first point grows rapidly away from the origin. The second point, even thoug
      alt="Movement of (.5, .3) in the julia map" 
      width="40%">
 
-Which points in the plane evolve out to infinity like (1,1) and which points evolve to some fixed nearby point like (.5, .3)? This is what is shown in the fractal image above. The black points evolve out to infinity, the white points stay close. This image shows the part of the X-Y plane from -1 to 1 in both x and y. You can see that there is not a simple rule for which points stay close - it's very complex - you might even say "chaotic." 
+In the fractal image above the point (1, 1) is in the lower right and is 
+colored black. All points that evolve out towards infinity are colored black. 
+The point (.5, .3) is near the center of the image and is colored white, all
+points that stay close to the origin are colored white.
+
+This is what is shown in the fractal image above. The black points evolve out
+to infinity, the white points stay close. This image shows the part of the X-Y
+plane from -1 to 1 in both x and y. You can see that there is not a simple rule
+for which points stay close - it's very complex.
+
+We can't actually wait for a point to evolve out to infinity. In practice we
+call a point black if it gets 5 units away within 100 iterations. These numbers
+are arbitrary and can be changed.
 
 Making Images
 -------------
@@ -102,12 +114,41 @@ I produced the image above by calling my program as follows:
 
 I expect to be able to do the same for yours.
 
-`.ppm` is a little-known file format. This is a very simple image format not in common use today. Still, because of it's simplicity, many imaging programs will be able to open it. We've checked that eog (eye of gnome) and gimp on the linux machines work well. Presumably similar programs in Windows and Mac OS-X should work as well. 
+`.ppm` is a little-known file format. This is a very simple image format not in
+common use today. Still, because of it's simplicity, many imaging programs will
+be able to open it. We've checked that eog (eye of gnome) and gimp on the linux
+machines work well. Presumably similar programs in Windows and Mac OS-X should
+work as well. Some students have reported odd coloration with certain programs 
+in the past.
 
-Challenge
----------
+Challenge 1 - 5%
+--------------
 
 For a small amount of additional credit rewrite the image library ppm.c/.h and
 your code to include a color structure. `image.data` should be an array of colors, not an array of chars. The word `char` should only appear in your code inside the `struct color` definition 
 
 Reminder: Challenge problems are not necessary to receive a good grade in the class. They are worth relatively few points compared to the amount of effort they take. 
+
+###Submission###
+
+You should just submit the normal files with this additional change. There is
+no need to submit the this challenge problem separately.
+
+Challenge 2 5%
+--------------
+
+In this assignment we've asked you to produce a black and white image
+where black points go out to infinity eventually and white points always stay
+close. 
+
+This challenge is to expand your program to produce a more beautiful image. You
+could, for example, look at how quickly each point leaves the central region
+and somehow convert this speed into a color. There are many other 
+possibilities. This system has a lot of complexity to explore 
+
+###Submission###
+
+Include a separate .c file for this challenge and instructions on how to run
+it. Your image must be produced by this program. You should also include a
+text description of what is represented in the produced image. Remember to
+unit-test and document your new code.
