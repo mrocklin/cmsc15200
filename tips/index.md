@@ -12,3 +12,4 @@ title: Tips
  * [How to use `math.h`](math.html)
  * [How unit-test with `assert.h`](assert.html)
  * [How to start a new C Project in Eclipse](new-c-project.html)
+ * [Command line arguments](command-line-arguments.html)
