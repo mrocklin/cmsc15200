@@ -11,3 +11,4 @@ title: Tips
  * [SVN](svn.html)
  * [How to use `math.h`](math.html)
  * [How unit-test with `assert.h`](assert.html)
+ * [How to start a new C Project in Eclipse](new-c-project.html)
