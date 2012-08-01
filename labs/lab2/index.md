@@ -3,7 +3,6 @@ layout: lab
 title: Lab 2 - Strings 
 ---
 
-
 Goals
 -----
 
@@ -27,110 +26,68 @@ References
 
 * [Wikiversity article on C-Strings](http://en.wikiversity.org/wiki/String_handling_in_C)
 
-Make a new C Project
---------------------
+To Start
+--------
 
-If you're using eclipse today you can follow these steps to start up a new C
-project. 
+Update your svn repository to download the materials for lab2. 
 
-    #include <stdio.h>
-    #include <stdbool.h>
-    #include <string.h>
-    #include <stdlib.h>
-    
-    void main(int argc, char *argv[])
-    {
-    	printf("hello world");
-    }
+    cd username-152
+    svn up
 
-Playing with chars
-------------------
+There is a file
 
-*Lesson in this section: types are merely suggestions*
+    lab2/caesar.c
 
-A `char` in C is just an individual character. `char`s
-are enclosed in single quotes: `'A'` and `'a'` and
-`'?'` are all `char`s.
+which contains a function 
 
-The way C represents `char`s internally is with a bit string
-(everything on a computer is ultimately represented this way). For
-example: the bit string `00100001` corresponds to `'!'`,
-`01000000` corresponds to `'@'`, `01000001`
-corresponds to `'A'`, and so on. If it seems that there is not
-much rhyme or reason to this scheme, you're right! The system is
-somewhat (though not entirely) arbitrary.
+    int strlength(char *s) // compute the length of a string
 
-Since C represents not only characters but integers as bit strings,
-it is the case that there are integers and characters which are
-represented with the very same bit string. That is, the string
-`00100001`, which represents the character `'!'`,
-corresponds exactly to an 8-bit representation of the number
-33. Internally, `'!'` and 33 are identical.* It is only the fact
-that your program expects `00100001` to be a character that C
-associates that bit string with `'!'`; otherwise it might very
-well treat the same bits as the integer 33.
+which will be helpful in part 1 and a function
 
+    char cycle(char c, int shift, char base, int len) // cycle a character
 
-*This statement is not entirely accurate, but assume it is for now.*
+which will be helpful in part 2. Each is well documented and is accompanied by
+a test function.
 
-
-In fact, C is very happy to treat characters as integers and
-integers as characters: it doesn't care about the difference
-between them. This means a programmer can perform arithmetic on
-characters as if they were numbers. If you try the following
-
-    char c = '!' + '!';
-    printf("%c", c);
-
-you will discover that in character
-arithmetic, `'!' + '!' == 'B'`. This is because `'!'` is 33 and `'B'` is 66. Similarly `'%'*2`
-is `'J'` because of the '%' and 'J's numerical values.
-
-The way C matches integers to characters is standard for many programming languages and programs dating back to the 1960s. 
-C uses the **ASCII Character Set**,where ASCII stands for 
-"American Standard Code for Information Interchange." 
-
-You can view a chart of the complete ASCII character set <a href="http://www.ascii-code.com/">here</a> or the commonly printed characters <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">here</a>. There are alternatives to ASCII which go beyond the 255 characters into other writing 
-systems. Unicode is such an alternative which is rapidly gaining popularity. 
-
-Take a moment to inspect the ASCII character set (either link is fine).
-You will notice that
-the alphabet appears twice, in two big contiguous chunks, once in
-lowercase form, and once in uppercase. 
-
-The lesson is this: characters can be treated as numbers in many useful ways.
-You can add and subtract from characters
-to move around the ASCII chart. You can compare characters using
-greater-than and less-than relations, and because of the way the ASCII
-character set is laid out, letters will often have the quantitative
-properties you expect: that is, `'b'` is greater than
-`'a'` but less than `'c'`. In fact, `'b'+1 == 'c'`
-
-<hr>
-
-TASK: Print out the ASCII table. That is, for each integer from 1 to 255 print both the integer representation (like 65) and the character representation (like 'A'). You can do this by representing the same value/variable as both an int and a char in printf (use both the %d and %c placeholders in the string but use the same value for each).  
-
-Many of the characters in the ASCII table are not printable. These will come out as boxes or spaces.
+If you are using Eclipse you can follow 
+[these instructions](../../tips/new-c-project.html) 
+to create a new C project from existing source.
 
 Playing with Pointers and Strings 
 ---------------------------------
 
-*Lesson in this section: how to deal with pointers*
-
 For help with this section please review the <a href="http://en.wikiversity.org/wiki/String_handling_in_C">wikiversity article</a> on C-Strings. 
 
-Strings in C are an interesting example because they are usually handled with pointers. In our first example we're going to create a function which concatenates (adds) two strings. Note that there are no built-in functions in C which natively handle entire string objects as a whole, all operations must be built out of smaller operations on individual characters. * There is no String class/type in C. When we say "String", we mean a pointer to an array of characters.* 
+We start with a warm up exercise. We will build a program to concatenate two
+strings. Concatenate means to "join together". You will build a function like
+this
 
-Your task in this section is to create a function which concatenates/adds two strings together. It should have the following header/signature:
-<pre> char *mystrcat(char *A, char *B) //strcat for string concatenation</pre> 
-It takes in two string inputs, and returns the concatenation of those same strings. **mystrcat("hello", "world")** should return **"helloworld"**. Note that the naive solution <pre> char *output = A+B; //This does not work </pre> will only create a third pointer to some bizarre location in memory that is the addition of the two locations A and B (pointers are just numeric locations in memory). 
+    char* concatenate(char* A, char* B)
 
-Instead you need to recognize that A and B point to locations in memory 
+that works like this
+
+    char *A = "Hello";
+    char *B = "World";
+    char *output = concatenate(A, B) // output points to a string "HelloWorld" 
+
+Note that the naive solution `output = A + B` just adds the pointer values.
+This does not work.
+
+We don't have functions in C which natively handle entire string objects as a whole, all operations must be built out of smaller operations on individual characters. *There is no String class/type in C. When we say "String", we mean a pointer to an array of characters.* 
+
+A and B point to locations in memory that hold many characters. We know a
+string of characters is finished when we reach the special terminating
+character `'\0'`
     
     A ----> {'H', 'e', 'l', 'l', 'o', '\0'}
     B ----> {'W', 'o', 'r', 'l', 'd', '\0'}
 
-In this case you would need to allocate space for 5+5+1 == 11 chars and fill that space with 
+In this case you would need to allocate space for 5+5+1 == 11 chars so that we
+can store `"Hello"`, `"World"`, and a terminating character `'\0'` at the end.
+
+    char* output = malloc(11);
+
+and fill that space with 
     
     {'H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd', '\0'}
 
@@ -138,11 +95,11 @@ You will need to transfer each letter individually, add a terminator at the end 
 
 First you will need to determine the length of the two strings. Then, you will need to allocate enough space to hold the addition of the two strings plus a terminating character. Then, copy the characters in the first string. Then copy the characters in the second string. Then you will need to write a terminator character '\0' and finally return the pointer to beginning of the result string. 
 
-
 Caesar Cipher
 -------------
 
-The Caesar Cipher is a rudimentary encryption scheme whereby each letter is shifted by a constant up or down. For example we could move the word "Cat" up by one to "Dbu" C->D , a->b , t->u. This method was invented (they say) by Caesar and was used in communication with his Generals. It is not recommended for use today....
+The Caesar Cipher is a rudimentary encryption scheme whereby each letter is
+shifted up or down by a constant. For example we could move the word "Cat" up by one to "Dbu" C->D , a->b , t->u. This method was invented (they say) by Caesar and was used in communication with his Generals. It is not recommended for use today....
 
 To write this easily we'll take advantage of characters' numerical representation in the ASCII format, 'A' = 65, 'B' = 66, 'C' = 67, etc.... Because characters are the same as eight-bit integers we can abuse the type system and type 'A'+2 to obtain 'C'. 
 
@@ -164,69 +121,80 @@ Note that bool is not native in C. You will have to include the standard bool li
 
     #include <stdbool.h>
 
-###Shifting a character###
+###Encrypting a character###
 
-Write a function `shiftChar` which takes in a character, **c**, and an integer, **shift**, and returns that character shifted up or down by the integer. 
+Write a function `encryptChar` which takes in a character, **c**, and an
+integer, **shift**, and returns that character shifted up or down by the
+integer. You can use the included function `cycle` to help you with this task. 
 
-Test that this function works on a variety of inputs. There are easy cases like `shiftChar('A', 1)=='B'` and more challenging cases like `shiftChar('z', 3)=='c'` or `shiftChar('a', -3)=='x'`. Make sure that it correctly encrypts both upper case and lower case letters but does not affect non-letters.
+Test that this function works on a variety of inputs. There are easy cases like
+`encryptChar('A', 1)=='B'` and more challenging cases like `encryptChar('z',
+3)=='c'` or `encryptChar('a', -3)=='x'`. Make sure that it correctly encrypts
+both upper case and lower case letters. Make sure that it does not affect non-letters.
 
-Unfortunately, **c+shift** will not work in cases where c+shift > 'Z' or &lt;'A' (if c is upper case) or c+shift > 'z' or &lt;'a' (if c is lowercase). In these cases you'll have to add or subtract 26 so that the letters wrap around, i.e. so that shiftChar('Z', 1) returns 'A' and shiftChar('A',-1) returns 'Z'.
+Unfortunately, `c+shift` will not work in cases where `c+shift > 'Z'` or
+` < 'A'` (if c is upper case) or `c+shift > 'z'` or ` < 'a'` 
+(if c is lowercase).
+In these cases you'll have to add or subtract 26 so that the letters wrap
+around, i.e. so that `encryptChar('Z', 1)` returns `'A'` 
+and `encryptChar('A',-1)` returns `'Z'`. 
+The function `cycle` handles all of this logic for you. See the
+comments above it and the included test function. `cycle` is more powerful than
+you need. For example `cycle` can change numbers around as well. We do not need
+to use this ability.
 
 It's important to recognize that we're playing with both chars and ints at the same time. C gives us much more control than other languages you may have tried.These other languages keep you away from potentially dangerous activities. C lets you play with dangerous things but allows you to get burned. 
 
 ###Putting it all together###
 
-Build a function which takes an input string and shift integer, goes through the string and shifts each character appropriately. Do this *in place*, that is, affect the input string directly. Do not shift non-letters. Your function will not need to return anything. Test your function from your main code. Does it work? Why can we do this? Inputs to functions in C are copied and changes to them are not relayed to the outside. Why is our string changed in our main function then? What exactly was our input to the function? Was it changed?
+Build a function which takes an input string and shift integer, allocates a new
+string of the same size, and then stores the encrypted version of each letter
+of the input string into the output string. Return a pointer to the beginning
+of the output string. Make sure you can add a terminating character `'\0'`
+
+Verify that this function works both by playing with it in `main` and by
+writing some test cases. Make sure you test some interesting cases; test
+that your function works correctly on punctuation, upper and lower case
+letters, letters that wrap beyond 'Z', etc....
+
+Write a decryption function that takes an encrypted string (like "Dbu") and the 
+shift integer (like 1) and returns the original (like "Cat"). This should be a
+very short function.
+
+For very long strings or for inputs that need to be processed very quickly we
+may choose to not make a copy of the input string. Instead, we may choose to
+affect the input memory directly. Write an encryption function that writes the
+result directly onto the memory pointed to by the input. We call this computing
+*in place*. It is generally considered dangerous but is sometimes done for
+performance reasons. Your function will not need to return anything (why is
+this?).
 
 *Potential error:* To test your code you may be tempted to make a string as follows 
 
     char *testString = "My test string tests both UPPER and lower case letters, as well as punctuation.\n";
-Unfortunately static strings that we specify directly in quotes are usually stored in * read-only memory* and can not be modified. Modifying them will result in a Segmentation Fault. To fix this simply create a dynamic copy of your string using 
+    encrypt(testString);
+    printf(testString);
 
-    testString = strdup(testString); //duplicate testString dynamically</pre>
+Unfortunately strings that we specify directly in quotes are usually stored in
+*read-only memory* and can not be modified. Modifying them will result in a
+Segmentation Fault. To fix this create a dynamic copy of your string using the
+`strdup` function found in `string.h`. `strdup` is short for string duplication.
 
-This string is stored in normal memory and is fine to change. 
+    testString = strdup(testString); //duplicate testString dynamically
 
-Now, build the same function but rather than have it change the string in place, have it create a new string of the appropriate size and fill it with the shifted characters. Do not simply copy your string and then call your previous encryption function. Pretend that this must be done quickly and the waste of writing the information twice is not acceptable (if you copy then you're writing once in string-copy, and then a second time when you shift). Return the copied string.  
-
-Build Decryption functions for each of your previous Encryption functions. These should each be one line long. 
-
-###Test Case###
-
-To test your function try the string "M! K fobi pkcd, iod kd dswoc pbecdbkdsxq vkxqekqo." with a shift of -10. You should obtain something readable. 
+This string is stored in normal memory and is fine to change.
 
 ###Free###
 
-The companion to **malloc** is **free**. **free** releases memory back into the common pool. This is especially important if your program creates lots of temporary arrays. If you don't free them then you'll quickly run out of space.  Think about the memory space that you've malloc'ed. Free those variales when they are no longer needed. Often programmers are lazy about this because usually arrays left hanging around are freed automatically when their home function returns. It is good to understand that **free** exists however. 
+The companion to **malloc** is **free**. **free** releases memory back into the
+common pool. This is especially important if your program creates lots of
+temporary arrays. If you don't free them then you'll quickly run out of space.
+Think about the memory space that you've malloc'ed. Free those variables when they are no longer needed. Often programmers are lazy about this because usually arrays left hanging around are freed automatically when their home function returns. It is good to understand that **free** exists however. 
 
 Program Arguments
 -----------------
 
-Usually we write main like this
-<img src="argumentsEclipse.png" alt="Arguments in Eclipse" 
-width="40%" align="right">
-
-    void main()
-
-You'll often see it written like this instead
-
-    int main(int argc, char* argv[])
-
-This allows us to give our program inputs/arguments. The second input, argv stores the name of the program and the values of the arguments while the first input tells us how many we received. 
-
-We give a program inputs on the command line by following the `./programName` with the inputs. If we wanted to give the program three inputs, 5, 5.5 and the string "hello world" we could type:
-
-    ./programName 5 5.5 "hello world" 
-
-In this case `argc==4` because there is one program and three arguments. 
-`argv` is an array of strings (`char* s`) with 
-
-* `argv[0] == programName`
-* `argv[1] == "5"`
-* `argv[2] == "5.5"`
-* `argv[3] == "hello world"`
-
-You can enter arugments in Eclipse in the "Run..." window by clicking on the arugments tab. 
+See the [tips page on arguments](../../tips/command-line-arguments.html) before proceeding
 
 Modify your program so that it takes two arguments. A message, enclosed in quotes, and a shift/integer. It should encrypt the message using the shift and then print the result to the screen using printf. To ensure that your message string is treated as a single input you should enclose it with quotation marks ("").
 
@@ -235,18 +203,10 @@ The shift you enter as an argument will enter your program as a string, not an i
 Your arguments might look like the following:
 `"This is the string I want to encrypt" 12`
 
-Submission
-----------
+Once this section is complete you should be able to run your program from the
+command line as follows
 
-Submit two .c files. 
+    gcc caesar.c -o caesar.exe
+    ./caesar.exe "Some important message." 13
 
-1.  One that prints out the ASCII Table. 
-2   One that takes a message and encryption number as arguments and prints 
-    the string encrypted using the number. Your mystrcat function should be 
-    included in this code.  It does not need to be tested in main. For this 
-    second program we will test it as follows:
-    
-    gcc -lm yourfile.c -o yourfile.exe
-    ./yourfile.exe "Some message here" 13
-
-We will then expect to see the encrypted text printed to screen. 
+We would then expect to see the encrypted text printed to screen. 
