@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Fractals 
-due: Sunday, August 5th, 8pm 
+due: Monday, August 6th, 8pm 
 ---
 
 There are no new concepts in this assignment. The difficulty is that you will
