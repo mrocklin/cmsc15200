@@ -17,7 +17,7 @@ This assignment is intended to teach you how to use
 * Basic Testing
 
 The context is that you are given a large quantity of data as an array of
-numbers (doubles). From this data you will compute an average (mean), spread
+numbers (floats). From this data you will compute an average (mean), spread
 (standard deviation), z-scores, and find values that are oddly large or small
 (outliers). You will do this by building a series of functions that make use of
 arrays for loops. These operations are very common in data analysis. 
@@ -29,11 +29,11 @@ special care. There are instructions [here](../../tips/math.html)
 Problem 1: Mean
 ---------------
 
-Given an array of numbers `double[] data` and a length of the array `int len` compute the average of the array. This can be done by summing all the elements in the array and then dividing by the number of elements. The formula for the mean **mu** of an array **x** of length **n** is as follows
+Given an array of numbers `float[] data` and a length of the array `int len` compute the average of the array. This can be done by summing all the elements in the array and then dividing by the number of elements. The formula for the mean **mu** of an array **x** of length **n** is as follows
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\large \fn_cm \mu = \frac{\sum_{i=0}^{n-1} x_i}{n}" target="_blank"><img src="http://latex.codecogs.com/png.latex?\large \fn_cm \mu = \frac{\sum_{i=0}^{n-1} x_i}{n}" title="\large \fn_cm \mu = \frac{\sum_{i=0}^{n-1} x_i}{n}" /></a>
 
-Write a function which takes in an array of doubles and the length of the array and returns the mean. 
+Write a function which takes in an array of floats and the length of the array and returns the mean. 
 
 Problem 2: Standard Deviation
 -----------------------------
@@ -74,7 +74,7 @@ I.e. <a href="http://www.codecogs.com/eqnedit.php?latex=\large Z_i = \frac{X_i -
 
 The z-score of a data point is the number of standard deviations it is above the mean. For example if the mean is 10 and the standard deviation is 2 then the value 11 has z-score .5 and 6 has a z-score of -2. Z-scores are a convenient way to normalize data and quickly see which values are above average, below average, and by how much.  
 
-Write a function which takes an array of doubles and its length and returns a pointer to a new array with the z-scores (also doubles). To do this you will need to dynamcally allocate space for the new array using `malloc`. An example that creates an array of ten ints is below.
+Write a function which takes an array of floats and its length and returns a pointer to a new array with the z-scores (also floats). To do this you will need to dynamcally allocate space for the new array using `malloc`. An example that creates an array of ten ints is below.
 
 `int* A = malloc(10 * sizeof(int));`
 
