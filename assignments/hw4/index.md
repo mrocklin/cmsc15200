@@ -9,12 +9,29 @@ In this assignment you will define new data types to describe various shapes. Yo
 Part 1 - Defining Structs
 -------------------------
 
+Consider the following circles. How could we describe them as variables in C?
+
+<div height="300px" width="400px" align="right">
+<svg  height="300px" width="400px">
+    <circle cx="240" cy="100" r="100" stroke="black" fill="white"/>
+    <circle cx="220" cy="70"  r="50"  stroke="black" fill="white"/>
+    <circle cx="100" cy="230" r="75"  stroke="black" fill="white"/>
+    <circle cx="260" cy="240" r="30"  stroke="black" fill="white"/>
+</svg>
+</div>
+
 Design new types using `struct` for the following shapes
 
 * Square 
 * Rectangle
 * Circle
 * Polygon
+
+Your definitions must be general enough to describe shapes of different sizes
+*and* centered at different locations. 
+
+</div>
+
 
 Part 2 - Some useful functions
 ------------------------------
@@ -34,7 +51,9 @@ You do not need to implement the following functions
 
 *Question: What is contains?*
 
-*Answer: contains takes a shape and a point and returns whether or not that point is contained within that shape. For example the point (1,1) is contained within the circle of radius two centered at the origin.
+*Answer: contains takes a shape and a point and returns whether or not that
+point is contained within that shape. For example the point (1,1) is contained
+within the circle of radius two centered at the origin.*
 
 Part 3 - Switch to Pointer Syntax
 ---------------------------------
