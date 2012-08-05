@@ -30,8 +30,9 @@ Design new types using `struct` for the following shapes
 Your definitions must be general enough to describe shapes of different sizes
 *and* centered at different locations. 
 
-</div>
-
+You might also want to create a `Point` type. This will be more complex and
+difficult (you will have structs within structs) but will be conceptually
+satisfying (your code will look more like math). This is your choice.
 
 Part 2 - Some useful functions
 ------------------------------
@@ -42,7 +43,7 @@ Write functions to compute the following for each of your data types
 * Area
 * Contains
 
-I.e. you should have functions like `rectanglePerimeter`, `rectangleArea`, and `rectangleContains`, `circlePerimeter`, `circleArea`, ....
+I.e. you should have functions like `rectanglePerimeter`, `rectangleArea`, `rectangleContains`, `circlePerimeter`, `circleArea`, ....
 
 You do not need to implement the following functions
 
@@ -69,6 +70,38 @@ Please make constuction/make functions for each of your shapes.
     Rect mkRect( ... )
 
 These functions should take in the necessary inputs to define a shape, malloc enough space for the shape, set the inputs and return a pointer to the shape's location in memory. 
+
+### Naming Conventions ###
+
+We use and recommend the following naming conventions in this assignment
+
+Struct definitions are lower-case
+
+    struct triangle
+    {
+        ...
+    }
+
+Pointer typedefs are upper-case
+
+    typedef struct triangle *      Triangle
+
+So 
+
+ * `Triangle` is a pointer to a `struct triangle`
+ * `Rect` is a pointer to a `struct rect`, etc.... 
+
+In this naming scheme upper case types are pointers. Lower-case types are not.
+
+Whenever you have a variable with a lower-case type you use dot
+
+    struct point p;
+    p.x = 5
+
+Whenever you have a variable with an upper-case type you use arrow
+
+    Point p = malloc(sizeof(struct point));
+    p->x = 5
 
 Part 4 - `shapes.h` and `test_shapes.c`
 ---------------------------------------
