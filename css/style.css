@@ -5,6 +5,11 @@ body, html {
     font-size: small;
 } 
 
+code{
+    font-size : 14;
+    font-family : Console;
+}
+
 #wrapper {
     width:960px;
     margin: 0 auto;
