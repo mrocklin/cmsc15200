@@ -21,7 +21,7 @@ body, html {
 }
 #navbar {
     background-color:#FFF;
-    width:200px;
+    width:150px;
     float:left;
 }
 
@@ -33,9 +33,9 @@ body, html {
 
 #content {
     float: left;
-    width: 740px;
+    width: 760px;
     background-color:#FFF;
-    padding-left: 10px;
+    padding-left: 30px;
     border-left: 1px solid #000;
 }
 
