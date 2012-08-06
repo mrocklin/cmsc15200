@@ -106,6 +106,11 @@ Whenever you have a variable with an upper-case type you use arrow
 Part 4 - `shapes.h` and `test_shapes.c`
 ---------------------------------------
 
+*We strongly recommend that you do not attempt this section until part 3 is
+complete and fully functional. Dealing with errors from structs/pointers and
+dealing with errors from header file organization at the same time can be very
+difficult. Solve one problem completely before you move on.*
+
 We often write code that is not for immediate use. Instead we write general
 purpose libraries that can be shared with other programmers or used in the
 future. When we do this we separate what the code does from how it works. People who use our library need to know what it does but not exactly how it works. They will study the .h file (what) and ignore the .c file (how)
@@ -117,6 +122,9 @@ If someone wants to see how a particular function works they will look in the
 see testing code. 
 
 * Make a `test_shapes.c` file that contains all of your testing code (remove this code from `shapes.c`)
+
+We recommend that you look at the code example named `triangleLibrary` in the
+code examples section. It contains these three files for a simpler case.
 
 Submission
 ----------
