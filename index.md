@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* [HW4](assignments/hw4/index.html) has been posted. 
+
 * [HW3](assignments/hw3/index.html) has been posted. 
 
 * [HW2](assignments/hw2/index.html) has been posted. 
