@@ -33,7 +33,7 @@ struct triangle
     Point c;
 };
 
-// Triangle constructor - requires three points
+// Triangle constructor - requires three Points
 Triangle mkTriangle(Point a, Point b, Point c)
 {
     Triangle t = malloc(sizeof(struct triangle));
