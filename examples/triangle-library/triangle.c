@@ -1,8 +1,6 @@
 #include<math.h>
 #include<stdlib.h>
 #include "triangle.h"
-#include<stdio.h>
- 
 
 //---------------------------------------------------------------------------
 //      Point
@@ -47,6 +45,7 @@ Triangle mkTriangle(Point a, Point b, Point c)
     return t;
 }
 
+// Just one function in this example
 float perimeter(Triangle t)
 {
     return dist(t->a, t->b) + dist(t->b, t->c) + dist(t->c, t->a);
