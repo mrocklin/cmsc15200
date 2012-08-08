@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#include"array.h"
+#include"list.h"
 
 // This test should be larger and more well separated. I.e. there should be
 // separate tests for each function. 
@@ -11,15 +11,15 @@
 
 void test_everything()
 {
-    Collection C = mkEmptyCollection();
-    append(C, 3);
-    assert(get(C, 0) == 3);
+    List L = mkEmptyList();
+    append(L, 3);
+    assert(get(L, 0) == 3);
 
-    append(C, 2);
-    assert(length(C) == 2);
+    append(L, 2);
+    assert(length(L) == 2);
 
-    assert(contains(C, 3));
-    assert(!contains(C, 5));
+    assert(contains(L, 3));
+    assert(!contains(L, 5));
 }
 
 void main()

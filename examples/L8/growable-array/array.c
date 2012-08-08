@@ -2,57 +2,56 @@
 #include<math.h>
 #include<assert.h>
 #include<stdbool.h>
-#include "array.h"
 
 struct array
 {
     int *data;
     int len;
 };
+typedef struct array *      Array;
 
-Collection mkEmptyCollection()
+Array mkEmptyList()
 {
     // Make space for the pointer to data and the int length
-    Collection C = malloc(sizeof(struct array));
+    Array A = malloc(sizeof(struct array));
 
-    C->len = 0;
-    C->data = NULL;
+    A->len = 0;
+    A->data = NULL;
     
-    return C;
+    return A;
 }
 
-void append(Collection C, int item)
+void append(Array A, int item)
 {
-    int* oldData = C->data;
-    C->data = malloc(sizeof(int) * (C->len + 1));
+    int* oldData = A->data;
+    A->data = malloc(sizeof(int) * (A->len + 1));
 
     // Copy old values over
     int i;
-    for(i = 0; i < C->len; i++)
-        C->data[i] = oldData[i];
+    for(i = 0; i < A->len; i++)
+        A->data[i] = oldData[i];
 
-    C->data[C->len] = item; // add new item
-    C->len = C->len + 1;
+    A->data[A->len] = item; // add new item
+    A->len = A->len + 1;
 }
 
-int get(Collection C, int index)
+int get(Array A, int index)
 {
-    return C->data[index];
+    return A->data[index];
 }
-void set(Collection C, int index, int value)
+void set(Array A, int index, int value)
 {
-    C->data[index] = value;
+    A->data[index] = value;
 }
-int length(Collection C)
+int length(Array A)
 {
-    return C->len;
+    return A->len;
 }
-bool contains(Collection C, int value)
+bool contains(Array A, int value)
 {
     int i;
-    for(i = 0; i < C->len; i++)
-        if (C->data[i] == value)
+    for(i = 0; i < A->len; i++)
+        if (A->data[i] == value)
             return true;
     return false;
 }
-
