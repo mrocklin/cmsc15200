@@ -15,8 +15,5 @@ Array powScalar(Array A, int power);
 Array addArray(Array A, Array B);
 Array mulArray(Array A, Array B);
 float sum(Array A);
-float mean(Array A);
-float std(Array A);
-Array zScores(Array A);
 
 #endif

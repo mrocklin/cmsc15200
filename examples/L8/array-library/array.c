@@ -101,7 +101,6 @@ Array mulArray(Array A, Array B)
     return out;
 }
 
-
 float sum(Array A)
 {
     int i;
@@ -109,16 +108,4 @@ float sum(Array A)
     for(i = 0; i < A->len ; i++)
         total += A->data[i];
     return total;
-}
-float mean(Array A)
-{
-    return sum(A) / A->len;
-}
-float std(Array A)
-{
-    return sqrt(sum(powScalar(addScalar(A, -mean(A)), 2)) / (A->len-1));
-}
-Array zScores(Array A)
-{
-    return    mulScalar(addScalar(A, -mean(A)), 1/std(A));
 }
