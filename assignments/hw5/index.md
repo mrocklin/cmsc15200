@@ -20,12 +20,11 @@ stream of inputs like the following
     Bob print 
     Charlie print 
 
-You will maintain the balance of each customer to your bank and ensure that
+You will maintain the balance of each customer and ensure that
 they do not withdraw too much money. 
 
 In order to do this you will have to write a lookup-table. You will then use
 that lookup table to build the banking application.
-
 
 Lookup Table
 ------------
@@ -54,7 +53,8 @@ keys.
 ###Implementation###
 
 We will implement a lookup table with a linked list of nodes. Each node will
-contain both a `char *key` and an `Account value`.
+contain both a `char *key` and an `Account value`. `Account`s will store all
+necessary information for each account. 
 
 Tiny Savings and Loan
 ---------------------
@@ -105,7 +105,9 @@ with the input file as an input to obtain the next message.
 You should create an input file stream (this is done for you), create a lookup
 table for the accounts, and then read in and handle messages one at a time
 affecting the account book at each step.
-You should do this until you receive the `"quit"` message 
+
+You should do this until the file runs out. `nextMessage` will return `NULL` 
+when it reaches the end of the file. 
 
 Example Input/Output
 --------------------
@@ -123,14 +125,6 @@ Input:
     Alice print
     Bob withdraws $250
     Bob print
-
-    Alice withdraws $50
-    Bob withdraws $200
-
-    Charlie joins trusted
-    Alice print 
-    Bob print 
-    Charlie print 
 
 Output:
 
@@ -150,6 +144,7 @@ You should submit the following files
 * lookup.h
 * lookup.c
 * test_lookup.c
+
 * tiny.c
 * tiny.h
 * test_tiny.c
