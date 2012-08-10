@@ -35,10 +35,10 @@ accounts by name. A lookup table has the following header
 
     Table mkTable();
 
-    bool contains(Table t, char *key); // does the table contain this key?
-    Account get(Table t, char *key); // get the proper account
-    void set(Table t, char *key, Account value); // add or set
-    int size(Table t); // how many elements are in the table?
+    bool contains(Table t, char *key); // Does the table contain this key?
+    ValueType get(Table t, char *key); // Get the account associated to key
+    Table set(Table t, char *key, ValueType value); // Sets the key to new value. Adds new key/value pair if necessary. Returns pointer to table.
+    int size(Table t); // How many elements are in the table?
     void printTable(Table t); // Nicely print the table
 
 In a lookup table we store values. Each value has an associated key. Given a
@@ -56,10 +56,18 @@ We will implement a lookup table with a linked list of nodes. Each node will
 contain both a `char *key` and an `Account value`. `Account`s will store all
 necessary information for each account. 
 
+Your lookup table code should know nothing about `ValueType`. You can typedef any type to ValueType at compile-time. For testing we suggest that you typedef 
+
+    typedef int ValueType;
+
+So that your lookup table maps strings to ints. When you move to the next section you can typedef Accounts to ValueType and your code should work just the same. This is because lookup.c doesn't actually need to know anything about the values that it stores. 
+
+    typedef Account ValueType;
+
 Tiny Savings and Loan
 ---------------------
 
-Now that we have a lookup table writing this application should be much easier.
+Now that we have a lookup table writing this application should be much easier. We strongly recommend that you don't start writing this part of the homework until you are confident that your lookup table works very well.
 
 Tiny savings and loan works under the following rules. 
 
@@ -72,12 +80,12 @@ check then they are marked as "trusted", otherwise they are "untrusted"
 * Anyone may deposit funds. 
 This increases their balance by the amount listed.
 
-    `Name deposit $amount`
+    `Name deposits $amount`
 
 * Anyone may withdraw their own funds. 
 This decreases their balance by the amount listed.
 
-    `Name withdraw $amount`
+    `Name withdraws $amount`
 
 * Trusted members may withdraw an additional $1000
 If a member is trusted then their balance can go negative (they owe money to
@@ -121,18 +129,23 @@ Input:
     Bob deposits $300
     Bob print
 
-    Alice withdraws $100
+    Alice withdraws $20
     Alice print
     Bob withdraws $250
+    Bob print
+
+    Alice withdraws $100
+    Alice print
+    Bob withdraws $200
     Bob print
 
 Output:
 
     Alice:      $ 100
     Bob:        $ 300
-    Alice:      $   0
+    Alice:      $  80
     Bob:        $  50
-    Alice:      $ -50
+    Alice:      $ -20
     Transaction for Bob fails
     Bob:        $  50
 
