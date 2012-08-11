@@ -8,5 +8,6 @@ title: Assignments
  * [HW2 : Arrays](hw2/index.html)
  * [HW3 : Fractals](hw3/index.html)
  * [HW4 : Shapes](hw4/index.html)
+ * [HW5 : Tiny Savings and Loan](hw5/index.html)
 
 

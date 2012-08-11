@@ -1,6 +1,6 @@
 ---
 layout: assignment 
-title: Bank 
+title: Tiny Savings and Loan 
 due: Thursday, August 16th, 8pm 
 ---
 
@@ -9,16 +9,16 @@ a small bank that saves and loans money out to customers. You will handle a
 stream of inputs like the following
 
     Alice joins trusted
-    Alice deposits $100
+    Alice deposits 100
     Bob joins untrusted
-    Bob deposits $300
-    Alice withdraws $50
-    Alice withdraws $100
-    Bob withdraws $100
+    Bob deposits 300
+    Alice withdraws 50
+    Alice withdraws 100
+    Bob withdraws 100
     Charlie joins trusted
-    Alice print 
-    Bob print 
-    Charlie print 
+    Alice prints
+    Bob prints
+    Charlie prints
 
 You will maintain the balance of each customer and ensure that
 they do not withdraw too much money. 
@@ -52,15 +52,24 @@ keys.
 
 ###Implementation###
 
+Internally a lookup table is a collection of key/value pairs. This collection
+must be able to grow. 
 We will implement a lookup table with a linked list of nodes. Each node will
-contain both a `char *key` and an `Account value`. `Account`s will store all
-necessary information for each account. 
+contain both a `char *key` and an `Account value` as well as the necessary
+fields to link to the other nodes. 
 
-Your lookup table code should know nothing about `ValueType`. You can typedef any type to ValueType at compile-time. For testing we suggest that you typedef 
+Your lookup table code should know nothing about `Account`s. In fact
+you should write your lookup table with the return type `ValueType`. 
+You can typedef any type to ValueType at compile-time. For testing we suggest that you typedef 
 
     typedef int ValueType;
 
-So that your lookup table maps strings to ints. When you move to the next section you can typedef Accounts to ValueType and your code should work just the same. This is because lookup.c doesn't actually need to know anything about the values that it stores. 
+So that your lookup table maps strings to ints. This will make it easy to
+write tests (you won't have to make accounts to test your lookup table). 
+When you move to the next
+section you can typedef Accounts to ValueType and your code should work just
+the same. This is because lookup.c doesn't actually need to know anything about
+the values that it stores. It will just need to find and return them.
 
     typedef Account ValueType;
 
@@ -80,12 +89,12 @@ check then they are marked as "trusted", otherwise they are "untrusted"
 * Anyone may deposit funds. 
 This increases their balance by the amount listed.
 
-    `Name deposits $amount`
+    `Name deposits amount`
 
 * Anyone may withdraw their own funds. 
 This decreases their balance by the amount listed.
 
-    `Name withdraws $amount`
+    `Name withdraws amount`
 
 * Trusted members may withdraw an additional $1000
 If a member is trusted then their balance can go negative (they owe money to
@@ -94,7 +103,7 @@ value fails completely.
 
 * Anyone may ask to see their current balance
 
-    `Name print`
+    `Name prints`
 
 If a withdrawal transaction fails your program should print a short fail
 message. See the output below
@@ -106,7 +115,26 @@ open up a file `FILE *inputFile`. You can call the function
 
     char *nextMessage(FILE *f)
 
-with the input file as an input to obtain the next message. 
+with the input file as an input to obtain the next line in the file. You can
+call this function many times. Each time you call it it will return the next
+line in the file.
+
+We have given you code to handle command line arguments from the user. As it is
+set up now this program has two modes. If you give it a text file as a command
+line input
+
+    ./tsl.exe input.txt
+
+It will read lines from that file. 
+
+If you do not supply an argument
+
+    ./tsl.exe
+
+It will expect you type in lines by hand at the terminal. This can be useful
+for testing. Of course, if you forget about this you will wonder why your
+    program isn't doing anything. It's waiting for you. You can signifiy
+    `end-of-input` by pressing `Ctrl-D` or just stop the program by `Ctrl-C`
 
 ###Program Flow###
 
@@ -123,20 +151,21 @@ Example Input/Output
 Input:
 
     Alice joins trusted
-    Alice deposits $100
+    Alice deposits 100
     Alice print
     Bob joins untrusted
-    Bob deposits $300
+    Bob deposits 300
     Bob print
 
-    Alice withdraws $20
+    Alice withdraws 10
+    Alice withdraws 10
     Alice print
-    Bob withdraws $250
+    Bob withdraws 250
     Bob print
 
-    Alice withdraws $100
+    Alice withdraws 100
     Alice print
-    Bob withdraws $200
+    Bob withdraws 200
     Bob print
 
 Output:
@@ -152,12 +181,8 @@ Output:
 Submission
 ----------
 
-You should submit the following files
+You should submit *at least* the following files
 
-* lookup.h
-* lookup.c
-* test_lookup.c
+* `lookup.h, lookup.c, test_lookup.c`
 
-* tiny.c
-* tiny.h
-* test_tiny.c
+* `tsl.c`
