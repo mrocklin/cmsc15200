@@ -5,8 +5,8 @@ due: Thursday, August 16th, 8pm
 ---
 
 In this assignment you will handle the transactions for Tiny Savings and Loan,
-a small bank that saves and loans money out to customers. You will handle a
-stream of inputs like the following
+a small bank that saves and loans money out to customers. The bank tellers
+generate a stream of inputs like the following 
 
     Alice joins trusted
     Alice deposits 100
@@ -20,18 +20,19 @@ stream of inputs like the following
     Bob prints
     Charlie prints
 
-You will maintain the balance of each customer and ensure that
-they do not withdraw too much money. 
+You will take this stream of inputs, maintain the balance of each customer and 
+ensure that they do not withdraw too much money. 
 
 In order to do this you will have to write a lookup-table. You will then use
 that lookup table to build the banking application.
 
-Lookup Table
-------------
+Lookup Table/Associative Array
+------------------------------
 
 It will be easy to build the banking application if we have the right data
-structure. In this assignment you will first build a lookup table to store the
-accounts by name. A lookup table has the following header
+structure. In this assignment you will first build a 
+[lookup table](http://en.wikipedia.org/wiki/Associative_array) 
+to store the accounts by name. A lookup table has the following header
 
     Table mkTable();
 
@@ -41,8 +42,10 @@ accounts by name. A lookup table has the following header
     int size(Table t); // How many elements are in the table?
     void printTable(Table t); // Nicely print the table
 
-In a lookup table we store values. Each value has an associated key. Given a
-key we can retreive the associated value. 
+A lookup table is a collection of key-value pairs. We can insert a new
+key-value pair with `set` and, given any key, we can easly retrieve the value.'
+In this case we will use the customer's name as the key and their full account
+as the value. 
 
 *Examples:* This is, for example, how a phone book works. In a phone book the
 keys are names and the values are phone numbers. You supply a name and get back
@@ -73,12 +76,22 @@ the values that it stores. It will just need to find and return them.
 
     typedef Account ValueType;
 
+###Testing###
+
+Unit testing each function in your lookup table in this case may be annoying 
+because each test will necessarily require the use of several functions 
+(e.g. you will have to `set` many times to test `size`). 
+Feel free to just have one or two large tests.
+
 Tiny Savings and Loan
 ---------------------
 
 Now that we have a lookup table writing this application should be much easier. We strongly recommend that you don't start writing this part of the homework until you are confident that your lookup table works very well.
 
-Tiny savings and loan works under the following rules. 
+The input stream from Tiny Savings and Loan works can have the actions  
+`joins, deposits, withdraws, prints`. In each case the action is preceded by
+the name of the account holder and optionally followed by some extra
+information (such as a balance). These actions have the following rules.
 
 * Anyone may open an account
 When they open an account a credit check is performed. If they pass the credit
@@ -106,18 +119,21 @@ value fails completely.
     `Name prints`
 
 If a withdrawal transaction fails your program should print a short fail
-message. See the output below
+message. 
+
+    Transaction for Name fails
 
 ###Handling inputs###
 
 The main function that we provide will take inputs from the command line and
-open up a file `FILE *inputFile`. You can call the function
+open up a pointer to a file `FILE* inputFile`. You can call the function
 
-    char *nextMessage(FILE *f)
+    char *nextMessage(FILE* inputStream)
 
 with the input file as an input to obtain the next line in the file. You can
 call this function many times. Each time you call it it will return the next
-line in the file.
+line in the file. When there are no more lines in the file it will return
+`NULL`
 
 We have given you code to handle command line arguments from the user. As it is
 set up now this program has two modes. If you give it a text file as a command
@@ -186,3 +202,11 @@ You should submit *at least* the following files
 * `lookup.h, lookup.c, test_lookup.c`
 
 * `tsl.c`
+
+If you write more files please remember to both add them to your repository
+
+    svn add filename.c
+
+and check them in. Remember that you can check the status of your repository
+through the [web interface](https://phoenixforge.cs.uchicago.edu/). This is
+useful to ensure that all the necessary files have been uploaded. 
