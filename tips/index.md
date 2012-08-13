@@ -14,3 +14,4 @@ title: Tips
  * [How to start a new C Project in Eclipse](new-c-project.html)
  * [Command line arguments](command-line-arguments.html)
  * [Segmentation Faults](segfault.html)
+ * [Getting Started with Python](python.html)
