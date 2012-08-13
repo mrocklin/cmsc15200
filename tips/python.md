@@ -10,9 +10,9 @@ Installing Python
 
 We strongly suggest installing the [all-in-one package provided by Enthought](http://www.enthought.com/products/getepd.php/). 
 You should install either the 
-[academic](http://www.enthought.com/products/getepd.php/edudownload.php) 
+[academic](http://www.enthought.com/products/edudownload.php) 
 or 
-[free](http://www.enthought.com/products/getepd.php/epd_free.php)
+[free](http://www.enthought.com/products/epd_free.php)
 versions. The full version costs money. You don't need this.
 
 
