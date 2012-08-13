@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* [Python Tips page](tips/python.html) is up.
+
 * [HW5](assignments/hw5/index.html) has been posted. 
 
 * [HW4](assignments/hw4/index.html) has been posted. 
