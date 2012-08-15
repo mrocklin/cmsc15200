@@ -5,9 +5,9 @@
 
 typedef struct array *  List;
 
-List mkEmptyList();
 List mkNonEmptyList(int* items, int len); // mostly for testing
 
+List mkEmptyList();
 void append(List c, int element); // add to end
 int length(List c);
 int get(List c, int index);

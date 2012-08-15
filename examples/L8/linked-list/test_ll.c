@@ -5,7 +5,7 @@
 
 void test_everything()
 {
-    Node head = NULL;
+    List head = NULL;
     head = append(head, 1);
     head = append(head, 2);
     head = append(head, 3);

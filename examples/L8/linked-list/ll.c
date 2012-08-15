@@ -4,6 +4,7 @@
 #include<stdbool.h>
 #include "ll.h"
 
+typedef struct node *   Node;
 struct node
 {
     int data;
@@ -20,18 +21,29 @@ int length(Node n)
     }
     return count;
 }
+
+Node mkEmptyList()
+{
+    return NULL;
+}
+
+Node mkNode(int item)
+{
+    Node n = malloc(sizeof(struct node));
+    n->data = item;
+    n->next = NULL;
+    return n;
+}
+
 Node prepend(Node n, int item)
 {
-    Node head = malloc(sizeof(struct node));
-    head->data = item;
+    Node head = mkNode(item);
     head->next = n;
     return head;
 }
 Node append(Node n, int item)
 {
-
-    Node newNode = malloc(sizeof(struct node));
-    newNode->data = item;
+    Node newNode = mkNode(item);
     newNode->next = NULL;
 
     if (n==NULL)
