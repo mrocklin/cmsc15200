@@ -23,7 +23,16 @@ There are different versions of Python on the department machines. We will run
 a small command to point your computer to the correct one. Make sure you are in
 your svn directory and type
 
-    source lab3/update_shell.sh
+    cd lab3
+    source update_shell.sh
+
+To verify that you are using the correct python please now type 
+
+    which python
+
+and verify that you see
+
+    /stage/climate/SOFTWARE/epd-7.3-2-rh5-x86_64/bin/python
 
 Hello World
 -----------
