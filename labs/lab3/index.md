@@ -159,11 +159,11 @@ The second entry `--pylab` opened ipython in plotting mode. In particular it imp
 
 Matplotlib has a number of very useful functions. You might want to take a look at their help stings. In particular today we will use 
 
-    plot
-    title
-    xlabel
-    ylabel
-    cla
+    plot    -- plot a list of floats
+    title   -- add a title 
+    xlabel  -- add a label on the x axis
+    ylabel  -- add a label on the y axis
+    cla     -- clear the plot
 
 `plot` is particularily useful. If you give it a list of floats it will plot them on the screen. If you give it two lists of floats it will plot them as X-Y coordinates. There are a number of options to select color, line style, etc....
 
