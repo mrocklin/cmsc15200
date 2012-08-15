@@ -4,6 +4,8 @@ title: Stimulus Data
 due: Monday Aug 20th, 8pm
 ---
 
+**Note: This assignment is still under construction**
+
 Introduction 
 ------------
 

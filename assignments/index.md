@@ -9,5 +9,4 @@ title: Assignments
  * [HW3 : Fractals](hw3/index.html)
  * [HW4 : Shapes](hw4/index.html)
  * [HW5 : Tiny Savings and Loan](hw5/index.html)
-
-
+ * [HW6 : Stimulus Data](hw6/index.html)
