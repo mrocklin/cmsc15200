@@ -56,19 +56,21 @@ You should do this conversion by making a function that takes in a single line o
 
 And produces a single `Project` or `dict` as described above. 
 
-You should then create a in the filename of the stimulus textfile and returns a list of Project objects/dicts which you will use for the rest of the assignment. 
+You should then create a function which takes in the filename of the stimulus textfile and returns a list of Project objects/dicts which you will use for the rest of the assignment. 
 
-This function might look like the following in use
+If you choose to create a Project class then this function might look like the following in use
 
-    In [2]: projects = projectsFromFilename('stimulus.txt')
-    In [3]: a_project = projects[1000]
+    In [2]: data = loadFromFile('stimulus.txt')
+    In [3]: a_project = data[1000]
     In [3]: a_project.cost
     Out[3]: 1229780
 
     In [4]: a_project.description
     Out[4]: '67 Avenue and Happy Valley Road Intersection Improvement'
 
-It will be much easier to perform the requested tasks with this list of classes rather than a list of strings. All of your other functions should use this list of Projects as an input. 
+It will be much easier to perform the requested tasks with this list of
+objects/dicts rather than with a list of strings. All of your other functions
+should use this list of objects/dicts as an input. 
 
 The Different Tasks
 -------------------
@@ -85,23 +87,26 @@ This question is self explanatory.
 
 This function should take both your list of projects and a state, specified by the two letter abbreviation (like "IL" for Illinois).
     
-    In [10]: moneyOfState(projects, "CA")
+    In [10]: moneyOfState(data, "CA")
     Out[10]: 23194447835
-
 
 * How much money was distributed to each state?
 
 In the previous question you computed how much money was given to a particular state. Now we want to know the answer for each of the states. You should use your previous function to accomplish this task (even though this is slightly inefficient).
 
 For this function you should return your answer as a dicitonary so that  
-
-    result['CA']==23194447835
+    
+    In [10]: result = moneyOfStates(data)
+    In [11]: result['CA'] # result is a dict
+    Out[11]: 23194447835
 
 You can obtain a list of states from the data. If you get the state from every project you'll have a list of every state with a lot of repeats. If you turn this list into a set (by calling the aptly-named `set` function) it will get rid of the repeats for you. There are 51 states because we include Puerto Rico (PR).
 
 * What were the names of all the projects that put computers in schools?
 
-You should check both that the text "computer" is in the project description and that the type of the project is "Schools". You should return a list of project descriptions (strings). 
+You should check both that the text "computer" is in the project description
+and that the type of the project is "Schools". You should return a list of
+project descriptions (a list of strings). 
 
 A note about using strings. The "in" operator can be very helpful to test if some text appears in a string. For example
 
@@ -134,6 +139,13 @@ We've discussed three different methods of manipulating lists.
 3. The third way used [list comprehensions](http://docs.python.org/tutorial/datastructures.html#list-comprehensions)
 
 Complete the last task using all three ways. 
+
+
+Challenge - 0%
+--------------
+
+We won't give you any credit, but if this sort of project interests you you
+might want to look into the [pandas library](http://pandas.pydata.org/).
 
 Submission
 ----------
