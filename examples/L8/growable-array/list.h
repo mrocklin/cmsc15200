@@ -8,7 +8,7 @@ typedef struct array *  List;
 List mkNonEmptyList(int* items, int len); // mostly for testing
 
 List mkEmptyList();
-void append(List c, int element); // add to end
+List append(List c, int element); // add to end
 int length(List c);
 int get(List c, int index);
 void set(List c, int index, int value);

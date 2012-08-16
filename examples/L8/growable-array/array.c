@@ -21,7 +21,7 @@ Array mkEmptyList()
     return A;
 }
 
-void append(Array A, int item)
+Array append(Array A, int item)
 {
     int* oldData = A->data;
     A->data = malloc(sizeof(int) * (A->len + 1));
@@ -33,6 +33,7 @@ void append(Array A, int item)
 
     A->data[A->len] = item; // add new item
     A->len = A->len + 1;
+    return A;
 }
 
 int get(Array A, int index)
