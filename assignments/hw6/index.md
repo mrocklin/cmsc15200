@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Stimulus Data
-due: Monday Aug 20th, 8pm
+due: Tuesday Aug 21th, 8pm
 ---
 
 **Note: This assignment is still under construction**
@@ -44,11 +44,13 @@ Using this data you will provide answers to the following questions
 Structuring Data
 ----------------
 
+*The goal of this section is to build a function to convert a list of strings into a list of dictionaries or objects.*
+
 You could do this entire assignment dealing with strings in all of your functions. This would require you to split your strings and call float many times. This is error prone because you're almost certain to get a few of those times wrong. It also requires you to understand what your data looks like in all parts of the code. 
 
 Instead, lets convert the input list of strings into a more structured format. This will allow us to manipulate it more easily. You should do one of the following
 
-1. Convert your list of strings into a list of Project objects. This will require you to make a very simple class with fields `city`, `state`, `description`, `jobs`, `cost`, `category`. Ensure that the fields jobs and cost hold integers and not strings.
+1. *Note - we havne't yet covered this in lecture. You're welcome to try this option but dictionaries might be easier*. Convert your list of strings into a list of Project objects. This will require you to make a very simple class with fields `city`, `state`, `description`, `jobs`, `cost`, `category`. Ensure that the fields jobs and cost hold integers and not strings.
 
 2. Convert your list of strings into a list of dictionaries. Each of your dictionaries should have the keys, `"city"`, `"state"`, `"description"`, `"jobs"`, `"cost"`, `"category"`. Ensure that the values associated to `"jobs"` and `"cost"` hold integers and not strings. 
 
@@ -68,6 +70,16 @@ If you choose to create a Project class then this function might look like the f
     Out[3]: 1229780
 
     In [4]: a_project.description
+    Out[4]: '67 Avenue and Happy Valley Road Intersection Improvement'
+
+If you choose to create a dictionaries then this function might look like the following in use
+
+    In [2]: data = loadFromFile('stimulus.txt')
+    In [3]: a_project = data[1000]
+    In [3]: a_project["cost"]
+    Out[3]: 1229780
+
+    In [4]: a_project["description"]
     Out[4]: '67 Avenue and Happy Valley Road Intersection Improvement'
 
 It will be much easier to perform the requested tasks with this list of
@@ -151,8 +163,7 @@ might want to look into the [pandas library](http://pandas.pydata.org/).
 
 Submission
 ----------
-Submit a two .py files. `stimulus.py` and `test_stimulus.py`
-
+Submit a three .py files. `stimulus.py`, `test_stimulus.py`, and `print_stimulus.py`
 
 `stimulus.py` should contain 
 
@@ -161,25 +172,31 @@ Submit a two .py files. `stimulus.py` and `test_stimulus.py`
 * Five additional functions - one for each task
 * Two additional functions if you do the challenge
 
-`test_stimulus.py` should contain code to test all of your functions in `stimulus.py`. In particular you will use `test_stimulus.py` to demonstrate that you have obtained the correct answers for the five questions. This file should look like this
+`test_stimulus.py` should testing code for the functions in `stimulus.py`. 
 
-    # test_stimulus.py
+`print_stimulus.py` should print out the answers to the above questions. It
+should use functions from stimulus.py. `print_stimulus.py` should be a very
+small file. As much of the logic as possible should be in `stimulus.py`.
+
+    # print_stimulus.py
     # Author: 
 
     from stimulus import *
 
     data = loadFromFile("stimulus.txt")
 
-    def test_question1():
-        assert totalMoney(data) == ********
+    print("Question 1")
+    print("Total money spent on all projects was: " + str(totalMoney(data)))
 
-    def test_question2():
-        ....
+    print("Question 2")
+    ...
 
-We will run `test_stimulus` using `nosetests` as described in the `unit testing with Python` tips page. 
-        
 You should not do the following - 
 
-* print anywhere - all functions should return lists, not print them
-* load the data from the file in every function. Data should only be loaded in in a single loadFromFile funciton. Every other function should take the data that is returned by this function as input.
-* Have code in your .py file other than function and class definitions. I.e. when your code is run nothing should actually be computed/loaded. Your `stimulus.py` file should only define some functions and possibly a Class.
+* print anywhere outside of print_stimulus.py - all functions should return lists, not print them
+* load the data from the file in every function. Data should only be loaded in in a single `loadFromFile` funciton. Every other function should take the data that is returned by this function as input.
+* Have code in your .py file other than function and class definitions. If we run 
+
+    python stimulus.py 
+    
+then nothing should actually be computed/loaded/printed. Your `stimulus.py` file should only define some functions and possibly a Class.
