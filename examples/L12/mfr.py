@@ -1,3 +1,5 @@
+# Mappings
+
 def stringLengths(L):
     newList = []
     for s in L:
@@ -9,6 +11,8 @@ def squareList(L):
     for x in L:
         newList.append(x**2) # ** is the "raise to power" operator in Python
     return newList
+
+# Filters
 
 def is_even(x):
     return x%2 == 0
@@ -27,6 +31,8 @@ def longWords(L):
             newList.append(s)
     return L
 
+
+# Reductions
 def sum(L):
     total = 0
     for x in L:
