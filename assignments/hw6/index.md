@@ -28,6 +28,16 @@ The different columns correspond to
 This describes a project that took place in the city North Chicago, IL to extend a bike path from Commonwealth to Sheridan Rd. It employed 20 people and cost $100 000. It is part of the Streets and Roads project category. 
 As you can see the different sections in each line are separated by a semi-colon. 
 
+###Useful functions###
+
+Given a file `f` you can use `f.readlines()` to get a list of strings. Each
+element of this list is one line of the file.
+
+Given a string `s` you can use `s.split(c)` to split s on the delimiter c. For
+example
+
+    "Hello World".split(" ") == ["Hello", "World"]
+
 Tasks
 -----
 
