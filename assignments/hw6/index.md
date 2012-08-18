@@ -58,7 +58,7 @@ You could do this entire assignment dealing with strings in all of your function
 
 Instead, lets convert the input list of strings into a more structured format. This will allow us to manipulate it more easily. You should do one of the following
 
-1. *Note - we havne't yet covered this in lecture. You're welcome to try this option but dictionaries might be easier*. Convert your list of strings into a list of Project objects. This will require you to make a very simple class with fields `city`, `state`, `description`, `jobs`, `cost`, `category`. Ensure that the fields jobs and cost hold integers and not strings.
+1. *Note - we haven't yet covered this in lecture. You're welcome to try this option but dictionaries might be easier*. Convert your list of strings into a list of Project objects. This will require you to make a very simple class with fields `city`, `state`, `description`, `jobs`, `cost`, `category`. Ensure that the fields jobs and cost hold integers and not strings.
 
 2. Convert your list of strings into a list of dictionaries. Each of your dictionaries should have the keys, `"city"`, `"state"`, `"description"`, `"jobs"`, `"cost"`, `"category"`. Ensure that the values associated to `"jobs"` and `"cost"` hold integers and not strings. 
 
