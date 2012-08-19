@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 struct point
 {
@@ -15,8 +16,14 @@ Point mkPoint(float x, float y)
     p->y = y;
     return p;
 }
+float dist(Point a, Point b)
+{
+    return sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2));
+}
 void main()
 {
     Point p = mkPoint(3, 2);
-    printf("This point is at (%f, %f)\n", p->x, p->y);
+    Point q = mkPoint(1, 0);
+    printf("The distance between the points (%f, %f) and (%f, %f) is %f\n",
+            p->x, p->y, q->x, q->y, dist(p, q));
 }
