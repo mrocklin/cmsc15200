@@ -1,7 +1,7 @@
 ---
 layout: assignment 
 title: Polynomial Class
-due: Sunday Aug 26th, 8pm
+due: Saturday Aug 25th, 8pm
 ---
 
 Part 1: Quadratic Polynomials
