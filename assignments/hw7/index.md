@@ -140,7 +140,7 @@ You should use the same names as you used for Quadratic. You should include the 
 * `integral`
 * `draw`
 
-*Note - Don't remember/never took calculus? Taking derivatives and computing integrals of polynomials is one of the more mechanical tasks in calculus. Check out the wikipedia page on the [power rule](http://en.wikipedia.org/wiki/Power_rule)
+*Note - Don't remember/never took calculus? Taking derivatives and computing integrals of polynomials is one of the more mechanical tasks in calculus. Check out the wikipedia page on the [power rule](http://en.wikipedia.org/wiki/Power_rule)*
 
 Part 3: Inheritance
 -------------------
