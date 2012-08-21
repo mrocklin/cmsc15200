@@ -11,3 +11,4 @@ title: Assignments
  * [HW5 : Tiny Savings and Loan](hw5/index.html)
  * [HW5b: Tiny Savings and Loan - Python supplement](hw5/index2.html)
  * [HW6 : Stimulus Data](hw6/index.html)
+ * [HW7 : Polynomial Class](hw7/index.html)
