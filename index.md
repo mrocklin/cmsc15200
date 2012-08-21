@@ -6,7 +6,7 @@ title: Basics
 Announcements
 -------------
 
-* [HW7](assignments/hw6/index.html) has been posted. 
+* [HW7](assignments/hw7/index.html) has been posted. 
 
 * [HW6](assignments/hw6/index.html) has been posted. 
 
