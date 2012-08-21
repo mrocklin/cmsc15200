@@ -6,6 +6,8 @@ title: Basics
 Announcements
 -------------
 
+* [HW7](assignments/hw6/index.html) has been posted. 
+
 * [HW6](assignments/hw6/index.html) has been posted. 
 
 * [HW5b - Python TSL](assignments/hw5/index2.html) has been posted. 
