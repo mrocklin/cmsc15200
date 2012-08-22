@@ -84,7 +84,7 @@ Write a method `roots` which returns the real roots of a quadratic polynomial,
 i.e. the values for `x` when `f(x)==0`. You'll have to use the [Quadratic
 Equation](http://en.wikipedia.org/wiki/Quadratic_equation). There can be 0, 1 or 2 roots to a quadratic polynomial. This function should always return either a list or a tuple.
 
-    In [17]: p
+    In [17]: print p
     Out[17]: 2x^2 + 3x + 1
 
     In [18]: p.roots()
@@ -96,6 +96,29 @@ Note that not all quadratic polynomials have roots (not all quadratics pass thro
 
     In [19]: p.hasRealRoots()
     Out[19]: True
+
+`__repr__` vs `__str__`
+-----------------------
+When you `print x` python calls the `__str__` function. If you're using IPython
+and just type in `x` and then enter, you don't get the same result. 
+
+    In [6]: print q
+    2x^2 + 3x + 4
+
+    In [7]: q
+    Out[7]: <__main__.Quadratic at 0xe2bad0>
+
+
+If you would also like to affect how IPython prints an object you can overwrite the `__repr__` function like so. 
+
+    def __repr__(self):
+        return str(self)
+
+After this change typing in `x` and pressing enter will print out the result
+of calling `__str__`. This is optional but might be convenient while developing.
+
+    In [7]: q
+    2x^2 + 3x + 4
 
 Submission Guidelines
 ---------------------
@@ -154,7 +177,9 @@ You should change your quadratic.py file very slightly for this change. You shou
 Challenge - General Functions - 10%
 -----------------------------------
 
-*This section requires you to treat variables as functions. This is a challenging topic that we did not seriously cover in class. This section is challenging. I expect only a few students to get halfway. I do not expect anyone to complete it perfectly.*
+*This section requires you to treat variables as functions. This is a
+challenging topic that we did not seriously cover in class. This section is
+challenging. *
 
 Build a class to represent a general real-valued function. The class will be able to perform the following operations
 
