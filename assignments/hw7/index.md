@@ -181,13 +181,13 @@ Challenge - General Functions - 10%
 challenging topic that we did not seriously cover in class. This section is
 challenging. *
 
-Build a class to represent a general real-valued function. The class will be able to perform the following operations
+Build a RealFunction class to represent a general real-valued function. The class will be able to perform the following operations
 
-* Add itself to another Function 
-* Multiply itself by another Function
+* Add itself to another RealFunction 
+* Multiply itself by another RealFunction
 * Evaluate the function at a given x (i.e. compute f(x)) 
 * Plot itself over a given range (with default -10, to 10)
-* Compute the derivative of the Function using [finite differences](http://en.wikipedia.org/wiki/Finite_differences) (this is hard)
-* Compute the definite integral of the Function using [quadrature](http://en.wikipedia.org/wiki/Numerical_integration). In particular you can use the [trapezoid rule](http://en.wikipedia.org/wiki/Trapezoid_rule) (this is hard)
+* Compute the derivative of the RealFunction using [finite differences](http://en.wikipedia.org/wiki/Finite_differences) (this is hard)
+* Compute the definite integral of the RealFunction using [quadrature](http://en.wikipedia.org/wiki/Numerical_integration). In particular you can use the [trapezoid rule](http://en.wikipedia.org/wiki/Trapezoid_rule) (this is hard)
 
-How can we represent any arbitrary function? We represent Quadratics with three floats, `a,b,c` - what python variable can we use to represent any possible mathematical function? We will use Python functions. The methods of this object will manipulate functions as variables. Just as Quadratic.add created new a new set of `a,b,c` for a new Quadratic, Function.add will create a new Python function for a new Function object. This is challenging.
+How can we represent any arbitrary function? We represent Quadratics with three floats, `a,b,c` - what python variable can we use to represent any possible mathematical function? We will use Python functions. The methods of this object will manipulate functions as variables. Just as Quadratic.add created new a new set of `a,b,c` for a new Quadratic, RealFunction.add will create a new Python function for a new RealFunction object.
