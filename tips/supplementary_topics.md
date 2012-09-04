@@ -10,8 +10,7 @@ utilities" and "data structures"
 The Unix toolset
 
 * Standard unix utilities `ls` `cp` `cd`
-* More interesting unix utilities. You should go through [a
-* tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+* More interesting unix utilities. You should go through [a tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/)
 * You should be comfortable with a high quality text editor (emacs, vim). 
 * [Standard streams](http://en.wikipedia.org/wiki/Standard_streams)
 
