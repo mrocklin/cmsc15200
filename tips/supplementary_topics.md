@@ -16,10 +16,10 @@ The Unix toolset
 
 [Abstract Data Types](http://en.wikipedia.org/wiki/Abstract_data_type)
 
-* [Stacks](http://en.wikipedia.org/wiki/Stack_(data_structure)
-* [Queues](http://en.wikipedia.org/wiki/Queue_(data_structure)
-* [Trees](http://en.wikipedia.org/wiki/Tree_(computer_science)
-* [Graphs](http://en.wikipedia.org/wiki/Graph_(data_structure)
+* [Stacks](http://en.wikipedia.org/wiki/Stack_%28data_structure%29)
+* [Queues](http://en.wikipedia.org/wiki/Queue_%28data_structure%29)
+* [Trees](http://en.wikipedia.org/wiki/Tree_%28computer_science%29)
+* [Graphs](http://en.wikipedia.org/wiki/Graph_%28data_structure%29)
 * [Priority Queues](http://en.wikipedia.org/wiki/Priority_queue)
 
 [Data Structures](http://en.wikipedia.org/wiki/Data_structures)
@@ -28,4 +28,4 @@ The Unix toolset
 * [Hash Tables](http://en.wikipedia.org/wiki/Hash_table)
 * [Binary Heaps](http://en.wikipedia.org/wiki/Binary_heap)
 
-[Make](http://en.wikipedia.org/wiki/Make_(software)
+[Make](http://en.wikipedia.org/wiki/Make_%28software%29)
