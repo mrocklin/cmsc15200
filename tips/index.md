@@ -15,3 +15,4 @@ title: Tips
  * [Command line arguments](command-line-arguments.html)
  * [Segmentation Faults](segfault.html)
  * [Getting Started with Python](python.html)
+ * [Supplementary Topics](supplementary_topics.html)
